@@ -2,9 +2,9 @@ import { NextRequest } from 'next/server'
 import { handleProgressGET, handleProgressPOST } from '@/lib/utils/kana-progress'
 
 export async function GET() {
-  return handleProgressGET('hiragana')
+  return handleProgressGET('katakana')
 }
 
 export async function POST(request: NextRequest) {
-  return handleProgressPOST(request, 'hiragana')
+  return handleProgressPOST(request, 'katakana')
 }

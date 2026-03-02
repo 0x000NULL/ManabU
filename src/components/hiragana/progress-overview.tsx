@@ -4,17 +4,28 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils/cn'
 import { useProgressStore } from '@/store/progress-store'
+import type { KanaType } from '@/types/kana'
 
-export function ProgressOverview() {
-  const hiragana = useProgressStore((s) => s.hiragana)
+interface ProgressOverviewProps {
+  kanaType?: KanaType
+  practiceHref?: string
+}
+
+export function ProgressOverview({
+  kanaType = 'hiragana',
+  practiceHref = '/hiragana/practice',
+}: ProgressOverviewProps) {
+  const progress = useProgressStore((s) => s[kanaType])
   const isLoading = useProgressStore((s) => s.isLoading)
-  const fetchHiraganaProgress = useProgressStore((s) => s.fetchHiraganaProgress)
+  const fetchProgress = useProgressStore((s) =>
+    kanaType === 'katakana' ? s.fetchKatakanaProgress : s.fetchHiraganaProgress,
+  )
 
   useEffect(() => {
-    fetchHiraganaProgress()
-  }, [fetchHiraganaProgress])
+    fetchProgress()
+  }, [fetchProgress])
 
-  if (isLoading && !hiragana) {
+  if (isLoading && !progress) {
     return (
       <div className="animate-pulse rounded-lg border border-border bg-background p-5">
         <div className="h-4 w-1/3 rounded bg-muted" />
@@ -28,9 +39,9 @@ export function ProgressOverview() {
     )
   }
 
-  if (!hiragana) return null
+  if (!progress) return null
 
-  const { totalCharacters, learnedCount, completionPercent, dueCount } = hiragana
+  const { totalCharacters, learnedCount, completionPercent, dueCount } = progress
 
   // Don't show if user hasn't started yet
   if (learnedCount === 0) return null
@@ -56,37 +67,37 @@ export function ProgressOverview() {
 
       {/* Status counts */}
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-        {hiragana.masteredCount > 0 && (
+        {progress.masteredCount > 0 && (
           <span className="text-green-600 dark:text-green-400">
-            {hiragana.masteredCount} mastered
+            {progress.masteredCount} mastered
           </span>
         )}
-        {hiragana.reviewingCount > 0 && (
+        {progress.reviewingCount > 0 && (
           <span className="text-blue-600 dark:text-blue-400">
-            {hiragana.reviewingCount} reviewing
+            {progress.reviewingCount} reviewing
           </span>
         )}
-        {hiragana.learningCount > 0 && (
+        {progress.learningCount > 0 && (
           <span className="text-amber-600 dark:text-amber-400">
-            {hiragana.learningCount} learning
+            {progress.learningCount} learning
           </span>
         )}
-        {hiragana.overallAccuracy > 0 && (
+        {progress.overallAccuracy > 0 && (
           <span
             className={cn(
-              hiragana.overallAccuracy >= 80
+              progress.overallAccuracy >= 80
                 ? 'text-green-600 dark:text-green-400'
                 : 'text-muted-foreground',
             )}
           >
-            {hiragana.overallAccuracy}% accuracy
+            {progress.overallAccuracy}% accuracy
           </span>
         )}
       </div>
 
       {/* Due reviews CTA */}
       {dueCount > 0 && (
-        <Link href="/hiragana/practice">
+        <Link href={practiceHref}>
           <div className="mt-3 rounded-md bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20">
             {dueCount} review{dueCount !== 1 ? 's' : ''} due — Review Now
           </div>
@@ -99,14 +110,19 @@ export function ProgressOverview() {
 interface GroupProgressBadgeProps {
   groupId: string
   totalCharacters: number
+  kanaType?: KanaType
 }
 
-export function GroupProgressBadge({ groupId, totalCharacters }: GroupProgressBadgeProps) {
-  const hiragana = useProgressStore((s) => s.hiragana)
+export function GroupProgressBadge({
+  groupId,
+  totalCharacters,
+  kanaType = 'hiragana',
+}: GroupProgressBadgeProps) {
+  const progressData = useProgressStore((s) => s[kanaType])
 
-  if (!hiragana) return null
+  if (!progressData) return null
 
-  const groupChars = hiragana.characters.filter((c) => c.group === groupId)
+  const groupChars = progressData.characters.filter((c) => c.group === groupId)
   const learnedInGroup = groupChars.filter((c) => c.status !== 'new').length
 
   if (learnedInGroup === 0) return null

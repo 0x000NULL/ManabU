@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { KanaCharacter } from '@/types/kana'
+import type { KanaCharacter, KanaType } from '@/types/kana'
 import type {
   QuizPhase,
   QuizQuestion,
@@ -13,10 +13,17 @@ import {
   calculateSessionStats,
 } from '@/lib/utils/quiz-engine'
 import { HIRAGANA_CHARACTERS } from '@/lib/constants/hiragana-data'
+import { KATAKANA_CHARACTERS } from '@/lib/constants/katakana-data'
+
+const KANA_CHARACTERS: Record<KanaType, KanaCharacter[]> = {
+  hiragana: HIRAGANA_CHARACTERS,
+  katakana: KATAKANA_CHARACTERS,
+}
 
 interface QuizState {
   phase: QuizPhase
   config: QuizSessionConfig | null
+  kanaType: KanaType
   questions: QuizQuestion[]
   currentIndex: number
   answers: QuizAnswer[]
@@ -25,7 +32,7 @@ interface QuizState {
   lastAnswerCorrect: boolean | null
 
   // Actions
-  startSession: (config: QuizSessionConfig) => void
+  startSession: (config: QuizSessionConfig, kanaType?: KanaType) => void
   submitAnswer: (userAnswer: string) => void
   nextQuestion: () => void
   restartSession: () => void
@@ -42,6 +49,7 @@ interface QuizState {
 export const useQuizStore = create<QuizState>()((set, get) => ({
   phase: 'setup',
   config: null,
+  kanaType: 'hiragana',
   questions: [],
   currentIndex: 0,
   answers: [],
@@ -49,11 +57,13 @@ export const useQuizStore = create<QuizState>()((set, get) => ({
   showingFeedback: false,
   lastAnswerCorrect: null,
 
-  startSession: (config) => {
-    const questions = generateQuizQuestions(config, HIRAGANA_CHARACTERS)
+  startSession: (config, kanaType = 'hiragana') => {
+    const characters = KANA_CHARACTERS[kanaType]
+    const questions = generateQuizQuestions(config, characters)
     set({
       phase: 'active',
       config,
+      kanaType,
       questions,
       currentIndex: 0,
       answers: [],
@@ -102,14 +112,14 @@ export const useQuizStore = create<QuizState>()((set, get) => ({
   },
 
   restartSession: () => {
-    const { config } = get()
+    const { config, kanaType } = get()
     if (config) {
-      get().startSession(config)
+      get().startSession(config, kanaType)
     }
   },
 
   practiceMissed: () => {
-    const { config } = get()
+    const { config, kanaType } = get()
     const stats = get().stats()
     if (!config || stats.missedCharacters.length === 0) return
 
@@ -125,6 +135,7 @@ export const useQuizStore = create<QuizState>()((set, get) => ({
     set({
       phase: 'active',
       config: missedConfig,
+      kanaType,
       questions,
       currentIndex: 0,
       answers: [],
@@ -138,6 +149,7 @@ export const useQuizStore = create<QuizState>()((set, get) => ({
     set({
       phase: 'setup',
       config: null,
+      kanaType: get().kanaType,
       questions: [],
       currentIndex: 0,
       answers: [],
@@ -163,8 +175,8 @@ export const useQuizStore = create<QuizState>()((set, get) => ({
   },
 
   availableCharacters: () => {
-    const { config } = get()
+    const { config, kanaType } = get()
     if (!config) return []
-    return HIRAGANA_CHARACTERS.filter((c) => config.groupIds.includes(c.group))
+    return KANA_CHARACTERS[kanaType].filter((c) => config.groupIds.includes(c.group))
   },
 }))

@@ -26,6 +26,8 @@ export interface HiraganaProgressSummary {
   characters: CharacterProgress[]
 }
 
+export type KanaProgressSummary = HiraganaProgressSummary
+
 export interface GroupProgress {
   groupId: string
   totalCharacters: number

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyAccessToken } from '@/lib/utils/jwt'
 
-const PROTECTED_ROUTES = ['/dashboard', '/hiragana', '/vocabulary']
+const PROTECTED_ROUTES = ['/dashboard', '/hiragana', '/katakana', '/vocabulary']
 const AUTH_ROUTES = ['/login', '/register', '/reset-password']
 
 export function proxy(request: NextRequest) {
@@ -35,5 +35,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/hiragana/:path*', '/vocabulary/:path*', '/login', '/register', '/reset-password'],
+  matcher: ['/dashboard/:path*', '/hiragana/:path*', '/katakana/:path*', '/vocabulary/:path*', '/login', '/register', '/reset-password'],
 }

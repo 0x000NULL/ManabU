@@ -3,13 +3,18 @@
 import { cn } from '@/lib/utils/cn'
 import { useProgressStore } from '@/store/progress-store'
 import { computeAchievements } from '@/lib/constants/achievements'
+import type { KanaType } from '@/types/kana'
 
-export function AchievementList() {
-  const hiragana = useProgressStore((s) => s.hiragana)
+interface AchievementListProps {
+  kanaType?: KanaType
+}
 
-  if (!hiragana || hiragana.learnedCount === 0) return null
+export function AchievementList({ kanaType = 'hiragana' }: AchievementListProps) {
+  const progressData = useProgressStore((s) => s[kanaType])
 
-  const achievements = computeAchievements(hiragana)
+  if (!progressData || progressData.learnedCount === 0) return null
+
+  const achievements = computeAchievements(progressData, kanaType)
   const unlockedCount = achievements.filter((a) => a.achieved).length
 
   if (unlockedCount === 0) return null

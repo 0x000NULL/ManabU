@@ -7,8 +7,14 @@ import { QuizFeedback } from '@/components/hiragana/quiz-feedback'
 import { RecognitionQuestion } from '@/components/hiragana/recognition-question'
 import { TypingQuestion } from '@/components/hiragana/typing-question'
 import { AudioQuestion } from '@/components/hiragana/audio-question'
+import type { KanaGroup } from '@/types/kana'
 
-export function QuizSession() {
+interface QuizSessionProps {
+  kanaLabel?: string
+  groups?: KanaGroup[]
+}
+
+export function QuizSession({ kanaLabel, groups }: QuizSessionProps) {
   const question = useQuizStore((s) => s.currentQuestion())
   const progress = useQuizStore((s) => s.progress())
   const answers = useQuizStore((s) => s.answers)
@@ -60,6 +66,8 @@ export function QuizSession() {
             showingFeedback={showingFeedback}
             userAnswer={lastAnswer?.userAnswer}
             availableCharacters={availableCharacters}
+            kanaLabel={kanaLabel}
+            groups={groups}
           />
         )}
         {question.type === 'audio' && (

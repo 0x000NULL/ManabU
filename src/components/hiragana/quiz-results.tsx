@@ -8,8 +8,17 @@ import { AudioPlayButton } from '@/components/hiragana/audio-play-button'
 import { useQuizStore } from '@/store/quiz-store'
 import { useProgressStore } from '@/store/progress-store'
 import Link from 'next/link'
+import type { KanaType } from '@/types/kana'
 
-export function QuizResults() {
+interface QuizResultsProps {
+  kanaType?: KanaType
+  overviewHref?: string
+}
+
+export function QuizResults({
+  kanaType = 'hiragana',
+  overviewHref = '/hiragana',
+}: QuizResultsProps) {
   const stats = useQuizStore((s) => s.stats())
   const questions = useQuizStore((s) => s.questions)
   const answers = useQuizStore((s) => s.answers)
@@ -27,7 +36,7 @@ export function QuizResults() {
       isCorrect: answer.isCorrect,
     }))
 
-    submitQuizResults(progressAnswers)
+    submitQuizResults(progressAnswers, kanaType)
       .then(() => setProgressSaved(true))
       .catch(() => setProgressSaved(false))
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -92,7 +101,7 @@ export function QuizResults() {
         <Button variant="ghost" onClick={resetToSetup}>
           Change Settings
         </Button>
-        <Link href="/hiragana">
+        <Link href={overviewHref}>
           <Button variant="ghost" className="w-full sm:w-auto">View Progress</Button>
         </Link>
       </div>

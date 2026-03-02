@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Downloads animated stroke order SVGs for hiragana characters from the
-# animCJK project (https://github.com/parsimonhi/animCJK, LGPL licensed).
+# Downloads animated stroke order SVGs for hiragana and katakana characters
+# from the animCJK project (https://github.com/parsimonhi/animCJK, LGPL licensed).
 #
 # SVGs are saved to public/svg/kana/ named by Unicode codepoint (e.g. 12354.svg for あ).
 # Run once during project setup: bash scripts/download-kana-svg.sh
@@ -44,16 +44,53 @@ HIRAGANA_CODEPOINTS=(
   12401 12404 12407 12410 12413
 )
 
+# All 46 base katakana characters (Unicode codepoints)
+KATAKANA_CODEPOINTS=(
+  # Vowels: アイウエオ
+  12450 12452 12454 12456 12458
+  # K-row: カキクケコ
+  12459 12461 12463 12465 12467
+  # S-row: サシスセソ
+  12469 12471 12473 12475 12477
+  # T-row: タチツテト
+  12479 12481 12484 12486 12488
+  # N-row: ナニヌネノ
+  12490 12491 12492 12493 12494
+  # H-row: ハヒフヘホ
+  12495 12498 12501 12504 12507
+  # M-row: マミムメモ
+  12510 12511 12512 12513 12514
+  # Y-row: ヤユヨ
+  12516 12518 12520
+  # R-row: ラリルレロ
+  12521 12522 12523 12524 12525
+  # W-row + N: ワヲン
+  12527 12530 12531
+  # Dakuten G-row: ガギグゲゴ
+  12460 12462 12464 12466 12468
+  # Dakuten Z-row: ザジズゼゾ
+  12470 12472 12474 12476 12478
+  # Dakuten D-row: ダヂヅデド
+  12480 12482 12485 12487 12489
+  # Dakuten B-row: バビブベボ
+  12496 12499 12502 12505 12508
+  # Handakuten P-row: パピプペポ
+  12497 12500 12503 12506 12509
+)
+
+# Combine both arrays
+ALL_CODEPOINTS=("${HIRAGANA_CODEPOINTS[@]}" "${KATAKANA_CODEPOINTS[@]}")
+
 mkdir -p "$OUTPUT_DIR"
 
-echo "Downloading hiragana stroke order SVGs to $OUTPUT_DIR..."
+echo "Downloading kana stroke order SVGs to $OUTPUT_DIR..."
 echo "Source: animCJK project (LGPL license)"
 echo ""
 
 success=0
 fail=0
 
-for cp in "${HIRAGANA_CODEPOINTS[@]}"; do
+for cp in "${ALL_CODEPOINTS[@]}"; do
   filename="${cp}.svg"
   url="${REPO_URL}/${filename}"
   output="${OUTPUT_DIR}/${filename}"
@@ -74,7 +111,7 @@ for cp in "${HIRAGANA_CODEPOINTS[@]}"; do
 done
 
 echo ""
-echo "Done: ${success} downloaded, ${fail} failed (out of ${#HIRAGANA_CODEPOINTS[@]} total)"
+echo "Done: ${success} downloaded, ${fail} failed (out of ${#ALL_CODEPOINTS[@]} total)"
 echo ""
 echo "Note: Combination characters (yoon) use their component characters'"
 echo "SVGs — no separate files are needed."

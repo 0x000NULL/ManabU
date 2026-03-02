@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils/cn'
-import type { KanaCharacter } from '@/types/kana'
+import type { KanaCharacter, KanaGroup } from '@/types/kana'
 import { HIRAGANA_GROUPS } from '@/lib/constants/hiragana-groups'
 
 interface CharacterPickerProps {
@@ -11,6 +11,7 @@ interface CharacterPickerProps {
   selectedCharacter?: string
   correctCharacter?: string
   className?: string
+  groups?: KanaGroup[]
 }
 
 export function CharacterPicker({
@@ -20,9 +21,10 @@ export function CharacterPicker({
   selectedCharacter,
   correctCharacter,
   className,
+  groups = HIRAGANA_GROUPS,
 }: CharacterPickerProps) {
   // Group characters by their group for organized display
-  const sortedGroups = [...HIRAGANA_GROUPS].sort((a, b) => a.display_order - b.display_order)
+  const sortedGroups = [...groups].sort((a, b) => a.display_order - b.display_order)
   const groupedChars = sortedGroups
     .map((group) => ({
       group,

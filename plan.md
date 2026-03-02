@@ -184,7 +184,7 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [x] Fetch due reviews on session start
 - [x] Submit review and update queue
 - [x] Show completion message when reviews done
-- [ ] Display cards studied today count
+- [x] Display cards studied today count (learned today via /api/v1/srs/stats)
 
 #### New Word Learning Flow
 - [x] Create new word learning page
@@ -197,22 +197,22 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [x] Create smooth transition to review mode
 
 #### Vocabulary Browsing
-- [ ] Create vocabulary browse page
-- [ ] Implement search functionality
-- [ ] Add JLPT level filter dropdown
-- [ ] Add frequency tier filter
-- [ ] Display vocabulary in card grid or list
-- [ ] Show word details in modal/drawer
-- [ ] Add "Add to SRS" button for manual addition
-- [ ] Implement virtual scrolling for large lists (react-window)
+- [x] Create vocabulary browse page
+- [x] Implement search functionality
+- [x] Add JLPT level filter dropdown
+- [x] Add frequency tier filter
+- [x] Display vocabulary in card grid or list
+- [x] Show word details in modal/drawer
+- [x] Add "Add to SRS" button for manual addition
+- [x] Implement pagination for large lists (standard pagination, no react-window needed)
 
 #### Progress Tracking
-- [ ] Display total vocabulary learned count
-- [ ] Display vocabulary mastered count (interval > 30 days)
-- [ ] Show daily review completion count
-- [ ] Calculate and display retention rate
-- [ ] Track learning velocity (words/week)
-- [ ] Create vocabulary progress chart
+- [x] Display total vocabulary learned count
+- [x] Display vocabulary mastered count (interval > 30 days)
+- [x] Show daily review completion count
+- [x] Calculate and display retention rate
+- [x] Track learning velocity (words/week)
+- [x] Create vocabulary progress chart
 
 #### Testing & Validation
 - [ ] Test complete SRS review flow
@@ -228,15 +228,15 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 ### Phase 1D: Expansion
 
 #### Katakana Curriculum
-- [ ] Populate katakana characters in kana table (46 base + 33 combinations)
-- [ ] Source stroke order animations for katakana
-- [ ] Source/record audio for katakana
-- [ ] Create mnemonics for katakana characters
-- [ ] Create example words (foreign words, emphasis)
-- [ ] Add katakana course overview page
-- [ ] Reuse hiragana components for katakana lessons
-- [ ] Implement katakana-specific practice modes
-- [ ] Add katakana progress tracking
+- [x] Populate katakana characters in kana table (46 base + 33 combinations)
+- [x] Source stroke order animations for katakana
+- [x] Source/record audio for katakana
+- [x] Create mnemonics for katakana characters
+- [x] Create example words (foreign words, emphasis)
+- [x] Add katakana course overview page
+- [x] Reuse hiragana components for katakana lessons
+- [x] Implement katakana-specific practice modes
+- [x] Add katakana progress tracking
 - [ ] Test complete katakana learning flow
 
 #### Grammar System Foundation

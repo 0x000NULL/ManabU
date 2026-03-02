@@ -1,36 +1,50 @@
 import type { Achievement, HiraganaProgressSummary } from '@/types/progress'
+import type { KanaType } from '@/types/kana'
 
 interface AchievementDefinition {
   id: string
-  title: string
-  description: string
-  check: (progress: HiraganaProgressSummary) => boolean
+  title: (kanaType: KanaType) => string
+  description: (kanaType: KanaType) => string
+  check: (progress: HiraganaProgressSummary, kanaType: KanaType) => boolean
 }
 
-const VOWEL_CHARACTERS = ['あ', 'い', 'う', 'え', 'お']
+const VOWEL_CHARACTERS: Record<KanaType, string[]> = {
+  hiragana: ['あ', 'い', 'う', 'え', 'お'],
+  katakana: ['ア', 'イ', 'ウ', 'エ', 'オ'],
+}
+
+const KANA_LABEL: Record<KanaType, string> = {
+  hiragana: 'hiragana',
+  katakana: 'katakana',
+}
+
+const MASTER_TITLE: Record<KanaType, string> = {
+  hiragana: 'Hiragana Master',
+  katakana: 'Katakana Master',
+}
 
 const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
   {
     id: 'first-step',
-    title: 'First Step',
-    description: 'Learn your first hiragana character',
+    title: () => 'First Step',
+    description: (kt) => `Learn your first ${KANA_LABEL[kt]} character`,
     check: (p) => p.learnedCount >= 1,
   },
   {
     id: 'vowel-master',
-    title: 'Vowel Master',
-    description: 'Learn all 5 vowel characters',
-    check: (p) => {
+    title: () => 'Vowel Master',
+    description: () => 'Learn all 5 vowel characters',
+    check: (p, kt) => {
       const learnedChars = new Set(
         p.characters.filter((c) => c.status !== 'new').map((c) => c.character),
       )
-      return VOWEL_CHARACTERS.every((v) => learnedChars.has(v))
+      return VOWEL_CHARACTERS[kt].every((v) => learnedChars.has(v))
     },
   },
   {
     id: 'basic-complete',
-    title: 'Basic Complete',
-    description: 'Learn all 46 basic hiragana characters',
+    title: () => 'Basic Complete',
+    description: (kt) => `Learn all 46 basic ${KANA_LABEL[kt]} characters`,
     check: (p) => {
       const basicGroups = new Set([
         'vowel',
@@ -52,38 +66,41 @@ const ACHIEVEMENT_DEFINITIONS: AchievementDefinition[] = [
   },
   {
     id: 'halfway-there',
-    title: 'Halfway There',
-    description: 'Learn 50% of all hiragana characters',
+    title: () => 'Halfway There',
+    description: (kt) => `Learn 50% of all ${KANA_LABEL[kt]} characters`,
     check: (p) => p.completionPercent >= 50,
   },
   {
     id: 'full-set',
-    title: 'Full Set',
-    description: 'Learn all 79 hiragana characters',
+    title: () => 'Full Set',
+    description: (kt) => `Learn all 79 ${KANA_LABEL[kt]} characters`,
     check: (p) => p.learnedCount >= 79,
   },
   {
     id: 'sharp-eye',
-    title: 'Sharp Eye',
-    description: 'Achieve 90%+ accuracy with 10+ characters reviewed',
+    title: () => 'Sharp Eye',
+    description: () => 'Achieve 90%+ accuracy with 10+ characters reviewed',
     check: (p) => {
       const reviewed = p.characters.filter((c) => c.totalReviews > 0)
       return reviewed.length >= 10 && p.overallAccuracy >= 90
     },
   },
   {
-    id: 'hiragana-master',
-    title: 'Hiragana Master',
-    description: 'Master all 79 hiragana characters',
+    id: 'kana-master',
+    title: (kt) => MASTER_TITLE[kt],
+    description: (kt) => `Master all 79 ${KANA_LABEL[kt]} characters`,
     check: (p) => p.masteredCount >= 79,
   },
 ]
 
-export function computeAchievements(progress: HiraganaProgressSummary): Achievement[] {
+export function computeAchievements(
+  progress: HiraganaProgressSummary,
+  kanaType: KanaType = 'hiragana',
+): Achievement[] {
   return ACHIEVEMENT_DEFINITIONS.map((def) => ({
     id: def.id,
-    title: def.title,
-    description: def.description,
-    achieved: def.check(progress),
+    title: def.title(kanaType),
+    description: def.description(kanaType),
+    achieved: def.check(progress, kanaType),
   }))
 }

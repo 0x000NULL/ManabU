@@ -4,16 +4,23 @@ import { useState } from 'react'
 import { cn } from '@/lib/utils/cn'
 import { Button } from '@/components/ui/button'
 import { HIRAGANA_GROUPS } from '@/lib/constants/hiragana-groups'
+import type { KanaGroup } from '@/types/kana'
 import type { QuizMode, QuizSessionConfig } from '@/types/quiz'
 
 interface QuizSetupProps {
   onStart: (config: QuizSessionConfig) => void
+  groups?: KanaGroup[]
 }
 
-const sortedGroups = [...HIRAGANA_GROUPS].sort((a, b) => a.display_order - b.display_order)
-const basicGroups = sortedGroups.filter((g) => !g.is_dakuten && !g.is_combination)
-const voicedGroups = sortedGroups.filter((g) => g.is_dakuten)
-const combinationGroups = sortedGroups.filter((g) => g.is_combination)
+function computeGroupSections(groups: KanaGroup[]) {
+  const sorted = [...groups].sort((a, b) => a.display_order - b.display_order)
+  return {
+    sortedGroups: sorted,
+    basicGroups: sorted.filter((g) => !g.is_dakuten && !g.is_combination),
+    voicedGroups: sorted.filter((g) => g.is_dakuten),
+    combinationGroups: sorted.filter((g) => g.is_combination),
+  }
+}
 
 const modeOptions: { value: QuizMode; label: string; description: string }[] = [
   {
@@ -41,7 +48,8 @@ const modeOptions: { value: QuizMode; label: string; description: string }[] = [
 const countOptions = [5, 10, 15, 20, 0] as const
 const countLabels: Record<number, string> = { 0: 'All', 5: '5', 10: '10', 15: '15', 20: '20' }
 
-export function QuizSetup({ onStart }: QuizSetupProps) {
+export function QuizSetup({ onStart, groups = HIRAGANA_GROUPS }: QuizSetupProps) {
+  const { sortedGroups, basicGroups, voicedGroups, combinationGroups } = computeGroupSections(groups)
   const [mode, setMode] = useState<QuizMode>('recognition')
   const [selectedGroups, setSelectedGroups] = useState<Set<string>>(new Set(['vowel']))
   const [questionCount, setQuestionCount] = useState<number>(10)
@@ -162,7 +170,7 @@ function GroupSection({
   onToggle,
 }: {
   title: string
-  groups: typeof sortedGroups
+  groups: KanaGroup[]
   selected: Set<string>
   onToggle: (id: string) => void
 }) {

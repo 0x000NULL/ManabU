@@ -28,7 +28,9 @@ export interface KanaGroup {
   is_combination: boolean
 }
 
-export interface HiraganaRule {
+export type KanaType = 'hiragana' | 'katakana'
+
+export interface KanaRule {
   id: string
   title: string
   description: string
@@ -39,3 +41,5 @@ export interface HiraganaRule {
     explanation: string
   }[]
 }
+
+export type HiraganaRule = KanaRule

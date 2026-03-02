@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { Prisma, PrismaClient } from '@prisma/client'
 import { HIRAGANA_CHARACTERS } from '../src/lib/constants/hiragana-data'
+import { KATAKANA_CHARACTERS } from '../src/lib/constants/katakana-data'
 
 const prisma = new PrismaClient()
 
@@ -66,6 +67,42 @@ async function main() {
     })
   }
   console.log(`✓ Seeded ${HIRAGANA_CHARACTERS.length} hiragana characters`)
+
+  // ============================================================================
+  // SEED KATAKANA (79 characters with mnemonics, example words, stroke data)
+  // ============================================================================
+  console.log('Seeding Katakana characters...')
+  for (const kana of KATAKANA_CHARACTERS) {
+    await prisma.kana.upsert({
+      where: { character: kana.character },
+      update: {
+        romaji: kana.romaji,
+        type: kana.type,
+        group: kana.group,
+        display_order: kana.display_order,
+        is_combination: kana.is_combination,
+        stroke_count: kana.stroke_count,
+        mnemonic: kana.mnemonic,
+        stroke_order_svg: kana.stroke_order_svg,
+        audio_url: kana.audio_url,
+        example_words: kana.example_words as unknown as Prisma.InputJsonValue,
+      },
+      create: {
+        character: kana.character,
+        romaji: kana.romaji,
+        type: kana.type,
+        group: kana.group,
+        display_order: kana.display_order,
+        is_combination: kana.is_combination,
+        stroke_count: kana.stroke_count,
+        mnemonic: kana.mnemonic,
+        stroke_order_svg: kana.stroke_order_svg,
+        audio_url: kana.audio_url,
+        example_words: kana.example_words as unknown as Prisma.InputJsonValue,
+      },
+    })
+  }
+  console.log(`✓ Seeded ${KATAKANA_CHARACTERS.length} katakana characters`)
 
   // ============================================================================
   // SEED VOCABULARY (from pipeline-generated JSON)

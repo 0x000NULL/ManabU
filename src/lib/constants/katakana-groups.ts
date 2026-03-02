@@ -1,0 +1,138 @@
+import type { KanaGroup } from '@/types/kana'
+
+export const KATAKANA_GROUPS: KanaGroup[] = [
+  {
+    id: 'vowel',
+    name: 'Vowels',
+    display_order: 1,
+    description: 'The five foundational vowel sounds: ア, イ, ウ, エ, オ',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'k-row',
+    name: 'K Row',
+    display_order: 2,
+    description: 'Consonant K combined with each vowel: カ, キ, ク, ケ, コ',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 's-row',
+    name: 'S Row',
+    display_order: 3,
+    description:
+      'Consonant S combined with each vowel: サ, シ, ス, セ, ソ. Note: si becomes "shi"',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 't-row',
+    name: 'T Row',
+    display_order: 4,
+    description:
+      'Consonant T combined with each vowel: タ, チ, ツ, テ, ト. Note: ti becomes "chi" and tu becomes "tsu"',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'n-row',
+    name: 'N Row',
+    display_order: 5,
+    description: 'Consonant N combined with each vowel: ナ, ニ, ヌ, ネ, ノ',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'h-row',
+    name: 'H Row',
+    display_order: 6,
+    description: 'Consonant H combined with each vowel: ハ, ヒ, フ, ヘ, ホ. Note: hu becomes "fu"',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'm-row',
+    name: 'M Row',
+    display_order: 7,
+    description: 'Consonant M combined with each vowel: マ, ミ, ム, メ, モ',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'y-row',
+    name: 'Y Row',
+    display_order: 8,
+    description: 'Consonant Y with three vowels: ヤ, ユ, ヨ',
+    character_count: 3,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'r-row',
+    name: 'R Row',
+    display_order: 9,
+    description:
+      'Consonant R combined with each vowel: ラ, リ, ル, レ, ロ. The Japanese R is a light tap, between English L and R',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'w-row',
+    name: 'W Row + N',
+    display_order: 10,
+    description:
+      'The W consonant (ワ, ヲ) plus the standalone nasal ン. ヲ is rarely used in modern katakana',
+    character_count: 3,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'g-z-row',
+    name: 'G & Z Rows (Dakuten)',
+    display_order: 11,
+    description:
+      'Voiced versions of K and S rows using dakuten (゛): ガ, ギ, グ, ゲ, ゴ, ザ, ジ, ズ, ゼ, ゾ',
+    character_count: 10,
+    is_dakuten: true,
+    is_combination: false,
+  },
+  {
+    id: 'd-b-row',
+    name: 'D & B Rows (Dakuten)',
+    display_order: 12,
+    description:
+      'Voiced versions of T and H rows using dakuten (゛): ダ, ヂ, ヅ, デ, ド, バ, ビ, ブ, ベ, ボ',
+    character_count: 10,
+    is_dakuten: true,
+    is_combination: false,
+  },
+  {
+    id: 'p-row',
+    name: 'P Row (Handakuten)',
+    display_order: 13,
+    description:
+      'H row modified with handakuten (゜) to create P sounds: パ, ピ, プ, ペ, ポ',
+    character_count: 5,
+    is_dakuten: false,
+    is_combination: false,
+  },
+  {
+    id: 'yoon',
+    name: 'Yoon (Combinations)',
+    display_order: 14,
+    description:
+      'Combination characters using a consonant + small ヤ/ユ/ヨ. Essential combos: キャ, キュ, キョ, シャ, シュ, ショ, チャ, チュ',
+    character_count: 8,
+    is_dakuten: false,
+    is_combination: true,
+  },
+]

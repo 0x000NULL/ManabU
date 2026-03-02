@@ -37,10 +37,13 @@ export function speakKana(text: string, rate: number = 0.8): boolean {
 }
 
 /**
- * Looks up a group by its ID from the hiragana groups constant.
+ * Looks up a group by its ID from the given groups constant.
  */
-export function getGroupById(groupId: string): KanaGroup | undefined {
-  return HIRAGANA_GROUPS.find((g) => g.id === groupId)
+export function getGroupById(
+  groupId: string,
+  groups: KanaGroup[] = HIRAGANA_GROUPS,
+): KanaGroup | undefined {
+  return groups.find((g) => g.id === groupId)
 }
 
 /**

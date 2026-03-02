@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn'
 import { HIRAGANA_GROUPS } from '@/lib/constants/hiragana-groups'
-import type { KanaCharacter } from '@/types/kana'
+import type { KanaCharacter, KanaGroup } from '@/types/kana'
 
 interface LessonNavigationProps {
   currentIndex: number
@@ -14,6 +14,8 @@ interface LessonNavigationProps {
   characters: KanaCharacter[]
   currentGroupId: string
   className?: string
+  routePrefix?: string
+  groups?: KanaGroup[]
 }
 
 export function LessonNavigation({
@@ -24,13 +26,15 @@ export function LessonNavigation({
   characters,
   currentGroupId,
   className,
+  routePrefix = '/hiragana',
+  groups = HIRAGANA_GROUPS,
 }: LessonNavigationProps) {
   const isFirst = currentIndex === 0
   const isLast = currentIndex === totalCount - 1
   const prevChar = isFirst ? null : characters[currentIndex - 1]
   const nextChar = isLast ? null : characters[currentIndex + 1]
 
-  const sortedGroups = [...HIRAGANA_GROUPS].sort((a, b) => a.display_order - b.display_order)
+  const sortedGroups = [...groups].sort((a, b) => a.display_order - b.display_order)
   const currentGroupIndex = sortedGroups.findIndex(g => g.id === currentGroupId)
   const nextGroup = currentGroupIndex < sortedGroups.length - 1 ? sortedGroups[currentGroupIndex + 1] : null
 
@@ -61,7 +65,7 @@ export function LessonNavigation({
 
       {isLast ? (
         nextGroup ? (
-          <Link href={`/hiragana/${nextGroup.id}`}>
+          <Link href={`${routePrefix}/${nextGroup.id}`}>
             <Button variant="outline" size="sm" className="min-w-[100px]">
               {nextGroup.name}
               <svg className="ml-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +79,7 @@ export function LessonNavigation({
             </Button>
           </Link>
         ) : (
-          <Link href="/hiragana">
+          <Link href={routePrefix}>
             <Button variant="outline" size="sm" className="min-w-[100px]">
               Overview
               <svg className="ml-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

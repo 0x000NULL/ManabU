@@ -8,13 +8,20 @@ interface GroupCardProps {
   characters: KanaCharacter[]
   className?: string
   progressBadge?: React.ReactNode
+  routePrefix?: string
 }
 
-export function GroupCard({ group, characters, className, progressBadge }: GroupCardProps) {
+export function GroupCard({
+  group,
+  characters,
+  className,
+  progressBadge,
+  routePrefix = '/hiragana',
+}: GroupCardProps) {
   const preview = characters.map(c => c.character).join(' ')
 
   return (
-    <Link href={`/hiragana/${group.id}`}>
+    <Link href={`${routePrefix}/${group.id}`}>
       <Card
         className={cn(
           'transition-colors hover:border-primary/40 hover:bg-muted/30',
