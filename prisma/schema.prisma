@@ -199,7 +199,7 @@ model Kana {
 
 model GrammarPattern {
   id                String    @id @default(cuid())
-  pattern           String
+  pattern           String    @unique
   meaning           String    @db.Text
   formation         String    @db.Text
   jlpt_level        String?   // 'N5', 'N4', 'N3', 'N2', 'N1'

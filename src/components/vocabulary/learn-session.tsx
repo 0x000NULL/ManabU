@@ -7,8 +7,9 @@ import { LearnWordCard } from '@/components/vocabulary/learn-word-card'
 import { speakVocab } from '@/lib/utils/vocabulary'
 
 export function LearnSession() {
-  const word = useLearnStore((s) => s.currentWord())
-  const { current, total } = useLearnStore((s) => s.progress())
+  const word = useLearnStore((s) => s.queue[s.currentIndex] ?? null)
+  const currentIndex = useLearnStore((s) => s.currentIndex)
+  const total = useLearnStore((s) => s.queue.length)
   const learnedToday = useLearnStore((s) => s.learnedToday)
   const dailyLimit = useLearnStore((s) => s.dailyLimit)
   const isSubmitting = useLearnStore((s) => s.isSubmitting)
@@ -53,7 +54,7 @@ export function LearnSession() {
   return (
     <div className="space-y-6">
       <LearnProgressBar
-        current={current}
+        current={currentIndex + 1}
         total={total}
         learnedToday={learnedToday}
         dailyLimit={dailyLimit}

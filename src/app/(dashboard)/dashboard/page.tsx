@@ -1,18 +1,25 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
 import { useProgressStore } from '@/store/progress-store'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import type { GrammarProgressStats } from '@/types/grammar'
 
-function HiraganaStatus() {
+function HiraganaStatus({ onUnauthorized }: { onUnauthorized: () => void }) {
   const hiragana = useProgressStore((s) => s.hiragana)
+  const error = useProgressStore((s) => s.error)
   const fetchHiraganaProgress = useProgressStore((s) => s.fetchHiraganaProgress)
 
   useEffect(() => {
     fetchHiraganaProgress()
   }, [fetchHiraganaProgress])
+
+  useEffect(() => {
+    if (error === 'unauthorized') onUnauthorized()
+  }, [error, onUnauthorized])
 
   if (!hiragana || hiragana.learnedCount === 0) {
     return <p className="mt-3 text-xs font-medium text-primary">Start Learning</p>
@@ -33,23 +40,46 @@ function HiraganaStatus() {
   )
 }
 
-const comingSoonSections = [
-  {
-    title: 'Vocabulary',
-    description: 'Build your word bank with 3000+ essential words using spaced repetition.',
-  },
-  {
-    title: 'Grammar',
-    description: 'Learn grammar patterns from N5 to N1 with clear explanations and examples.',
-  },
-  {
-    title: 'Immersion',
-    description: 'Practice with real Japanese media, interactive subtitles, and sentence mining.',
-  },
-]
+function GrammarStatus({ onUnauthorized }: { onUnauthorized: () => void }) {
+  const [progress, setProgress] = useState<GrammarProgressStats | null>(null)
+
+  useEffect(() => {
+    fetch('/api/v1/grammar/progress')
+      .then((res) => {
+        if (res.status === 401) {
+          onUnauthorized()
+          return null
+        }
+        return res.ok ? res.json() : null
+      })
+      .then((json) => {
+        if (json?.data) setProgress(json.data)
+      })
+      .catch(() => {})
+  }, [onUnauthorized])
+
+  if (!progress || progress.learned === 0) {
+    return <p className="mt-3 text-xs font-medium text-primary">Start Learning</p>
+  }
+
+  return (
+    <p className="mt-3 text-xs font-medium text-primary">
+      Continue ({progress.learned} pattern{progress.learned !== 1 ? 's' : ''} learned)
+    </p>
+  )
+}
 
 export default function DashboardPage() {
   const { user } = useAuthStore()
+  const router = useRouter()
+  const redirectingRef = useRef(false)
+
+  const handleUnauthorized = useCallback(async () => {
+    if (redirectingRef.current) return
+    redirectingRef.current = true
+    await useAuthStore.getState().logout()
+    router.push('/login')
+  }, [router])
 
   return (
     <div className="space-y-6">
@@ -70,22 +100,50 @@ export default function DashboardPage() {
               <p className="text-sm text-muted-foreground">
                 Master the Japanese writing systems — your first step to reading Japanese.
               </p>
-              <HiraganaStatus />
+              <HiraganaStatus onUnauthorized={handleUnauthorized} />
             </CardContent>
           </Card>
         </Link>
 
-        {comingSoonSections.map(section => (
-          <Card key={section.title}>
+        <Link href="/vocabulary" className="transition-opacity hover:opacity-80">
+          <Card>
             <CardHeader>
-              <CardTitle>{section.title}</CardTitle>
+              <CardTitle>Vocabulary</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">{section.description}</p>
-              <p className="mt-3 text-xs font-medium text-primary">Coming soon</p>
+              <p className="text-sm text-muted-foreground">
+                Build your word bank with 3000+ essential words using spaced repetition.
+              </p>
+              <p className="mt-3 text-xs font-medium text-primary">Browse Words</p>
             </CardContent>
           </Card>
-        ))}
+        </Link>
+
+        <Link href="/grammar" className="transition-opacity hover:opacity-80">
+          <Card>
+            <CardHeader>
+              <CardTitle>Grammar</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Learn grammar patterns from N5 to N1 with clear explanations and examples.
+              </p>
+              <GrammarStatus onUnauthorized={handleUnauthorized} />
+            </CardContent>
+          </Card>
+        </Link>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Immersion</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              Practice with real Japanese media, interactive subtitles, and sentence mining.
+            </p>
+            <p className="mt-3 text-xs font-medium text-primary">Coming soon</p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

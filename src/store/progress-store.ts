@@ -26,6 +26,10 @@ export const useProgressStore = create<ProgressState>()((set) => ({
     set({ isLoading: true, error: null })
     try {
       const res = await fetch('/api/v1/hiragana/progress')
+      if (res.status === 401) {
+        set({ error: 'unauthorized' })
+        return
+      }
       const data = await res.json()
       if (data.success) {
         set({ hiragana: data.data })
@@ -43,6 +47,10 @@ export const useProgressStore = create<ProgressState>()((set) => ({
     set({ isLoading: true, error: null })
     try {
       const res = await fetch('/api/v1/katakana/progress')
+      if (res.status === 401) {
+        set({ error: 'unauthorized' })
+        return
+      }
       const data = await res.json()
       if (data.success) {
         set({ katakana: data.data })

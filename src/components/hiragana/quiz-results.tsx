@@ -1,12 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { cn } from '@/lib/utils/cn'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { AudioPlayButton } from '@/components/hiragana/audio-play-button'
 import { useQuizStore } from '@/store/quiz-store'
 import { useProgressStore } from '@/store/progress-store'
+import { calculateSessionStats } from '@/lib/utils/quiz-engine'
 import Link from 'next/link'
 import type { KanaType } from '@/types/kana'
 
@@ -19,9 +20,9 @@ export function QuizResults({
   kanaType = 'hiragana',
   overviewHref = '/hiragana',
 }: QuizResultsProps) {
-  const stats = useQuizStore((s) => s.stats())
   const questions = useQuizStore((s) => s.questions)
   const answers = useQuizStore((s) => s.answers)
+  const stats = useMemo(() => calculateSessionStats(answers, questions), [answers, questions])
   const restartSession = useQuizStore((s) => s.restartSession)
   const practiceMissed = useQuizStore((s) => s.practiceMissed)
   const resetToSetup = useQuizStore((s) => s.resetToSetup)

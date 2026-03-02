@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
-import type { VocabularyStats } from '@/types/learn'
+import { StatsSummary } from '@/components/vocabulary/stats-summary'
+import { LearningVelocityChart } from '@/components/vocabulary/learning-velocity-chart'
+import type { VocabularyExtendedStats } from '@/types/learn'
 
 export default function VocabularyPage() {
-  const [stats, setStats] = useState<VocabularyStats | null>(null)
+  const [stats, setStats] = useState<VocabularyExtendedStats | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function VocabularyPage() {
           return
         }
         const json = await res.json()
-        setStats(json.data as VocabularyStats)
+        setStats(json.data as VocabularyExtendedStats)
       } catch {
         setError('Network error — please try again')
       }
@@ -53,7 +55,7 @@ export default function VocabularyPage() {
       {stats && (
         <div className="space-y-6">
           {/* Action cards */}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-3">
             {/* Due Reviews */}
             <Card>
               <CardContent className="flex flex-col gap-4">
@@ -126,27 +128,45 @@ export default function VocabularyPage() {
                 </Link>
               </CardContent>
             </Card>
+
+            {/* Browse Vocabulary */}
+            <Card>
+              <CardContent className="flex flex-col gap-4">
+                <div className="flex items-center gap-3 pt-2">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10">
+                    <svg
+                      className="h-5 w-5 text-purple-600 dark:text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-foreground">Browse Vocabulary</h2>
+                    <p className="text-sm text-muted-foreground">Search and explore all words</p>
+                  </div>
+                </div>
+                <Link href="/vocabulary/browse">
+                  <Button className="w-full" variant="outline">
+                    Browse Words
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Summary stats */}
-          <Card>
-            <CardContent className="pt-2">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stats.totalLearned}</p>
-                  <p className="text-xs text-muted-foreground">Total learned</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stats.learnedToday}</p>
-                  <p className="text-xs text-muted-foreground">Learned today</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-bold text-foreground">{stats.dueCount}</p>
-                  <p className="text-xs text-muted-foreground">Due for review</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Stats summary */}
+          <StatsSummary stats={stats} />
+
+          {/* Weekly learning chart */}
+          <LearningVelocityChart data={stats.weeklyLearning} />
         </div>
       )}
     </div>

@@ -240,45 +240,45 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [ ] Test complete katakana learning flow
 
 #### Grammar System Foundation
-- [ ] Create grammar_patterns table
-- [ ] Create grammar_examples table
-- [ ] Research and compile N5 grammar patterns (30 patterns)
-- [ ] Write explanations for core N5 patterns
-- [ ] Create 3-5 example sentences per pattern
-- [ ] Add formation rules for each pattern
-- [ ] Add common mistakes and notes sections
-- [ ] Tag patterns with JLPT levels and difficulty
-- [ ] Create grammar seed script
+- [x] Create grammar_patterns table
+- [x] Create grammar_examples table
+- [x] Research and compile N5 grammar patterns (30 patterns)
+- [x] Write explanations for core N5 patterns
+- [x] Create 3-5 example sentences per pattern
+- [x] Add formation rules for each pattern
+- [x] Add common mistakes and notes sections
+- [x] Tag patterns with JLPT levels and difficulty
+- [x] Create grammar seed script
 
 #### Grammar API Endpoints
-- [ ] Create `/api/v1/grammar` endpoint (list patterns)
-- [ ] Create `/api/v1/grammar/:id` endpoint (get single pattern)
-- [ ] Add JLPT level filtering
-- [ ] Add difficulty-based sorting
+- [x] Create `/api/v1/grammar` endpoint (list patterns)
+- [x] Create `/api/v1/grammar/:id` endpoint (get single pattern)
+- [x] Add JLPT level filtering
+- [x] Add difficulty-based sorting
 - [ ] Test grammar API endpoints
 
 #### Grammar Lesson UI
-- [ ] Create grammar patterns list page
-- [ ] Create grammar pattern detail page
-- [ ] Display pattern, meaning, and formation
-- [ ] Show example sentences with translations
-- [ ] Add notes and common mistakes section
-- [ ] Implement pattern navigation (prev/next)
-- [ ] Add progress tracking for grammar patterns
-- [ ] Create grammar progress indicator on dashboard
+- [x] Create grammar patterns list page
+- [x] Create grammar pattern detail page
+- [x] Display pattern, meaning, and formation
+- [x] Show example sentences with translations
+- [x] Add notes and common mistakes section
+- [x] Implement pattern navigation (prev/next)
+- [x] Add progress tracking for grammar patterns
+- [x] Create grammar progress indicator on dashboard
 
 #### Grammar Practice (Basic)
-- [ ] Create fill-in-the-blank exercise component
-- [ ] Create multiple choice exercise component
-- [ ] Add 5-10 practice exercises per pattern
-- [ ] Implement exercise feedback (correct/incorrect)
-- [ ] Track grammar practice completion
+- [x] Create fill-in-the-blank exercise component
+- [x] Create multiple choice exercise component
+- [x] Add 5-10 practice exercises per pattern
+- [x] Implement exercise feedback (correct/incorrect)
+- [x] Track grammar practice completion
 
 #### Additional N4 Grammar
-- [ ] Research and compile 20 core N4 patterns
-- [ ] Write explanations for N4 patterns
-- [ ] Create example sentences for N4 patterns
-- [ ] Add N4 patterns to database
+- [x] Research and compile 20 core N4 patterns
+- [x] Write explanations for N4 patterns
+- [x] Create example sentences for N4 patterns
+- [x] Add N4 patterns to database
 
 #### Testing & Validation
 - [ ] Test katakana learning flow

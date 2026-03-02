@@ -1,5 +1,6 @@
 'use client'
 
+import { useMemo } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils/cn'
 import { Button } from '@/components/ui/button'
@@ -13,9 +14,22 @@ const ratingDisplay = [
 ]
 
 export function ReviewCompletion() {
-  const stats = useReviewStore((s) => s.stats())
+  const answers = useReviewStore((s) => s.answers)
+  const totalDueAtStart = useReviewStore((s) => s.totalDueAtStart)
   const queueLength = useReviewStore((s) => s.queue.length)
   const startSession = useReviewStore((s) => s.startSession)
+
+  const stats = useMemo(
+    () => ({
+      totalReviewed: answers.length,
+      againCount: answers.filter((a) => a.rating === 'again').length,
+      hardCount: answers.filter((a) => a.rating === 'hard').length,
+      goodCount: answers.filter((a) => a.rating === 'good').length,
+      easyCount: answers.filter((a) => a.rating === 'easy').length,
+      totalDueAtStart,
+    }),
+    [answers, totalDueAtStart],
+  )
 
   const remaining = stats.totalDueAtStart - queueLength
 

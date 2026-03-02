@@ -14,8 +14,9 @@ const ratingKeys: Record<string, Rating> = {
 }
 
 export function ReviewSession() {
-  const card = useReviewStore((s) => s.currentCard())
-  const { current, total } = useReviewStore((s) => s.progress())
+  const card = useReviewStore((s) => s.queue[s.currentIndex] ?? null)
+  const currentIndex = useReviewStore((s) => s.currentIndex)
+  const total = useReviewStore((s) => s.queue.length)
   const isRevealed = useReviewStore((s) => s.isRevealed)
   const isSubmitting = useReviewStore((s) => s.isSubmitting)
   const answers = useReviewStore((s) => s.answers)
@@ -51,7 +52,7 @@ export function ReviewSession() {
 
   return (
     <div className="space-y-6">
-      <ReviewProgressBar current={current} total={total} answers={answers} />
+      <ReviewProgressBar current={currentIndex + 1} total={total} answers={answers} />
       <ReviewCard
         item={card}
         isRevealed={isRevealed}

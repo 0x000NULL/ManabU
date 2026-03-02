@@ -37,3 +37,18 @@ export interface VocabularyStats {
   totalLearned: number
   dailyNewWordLimit: number
 }
+
+export interface WeeklyLearningEntry {
+  weekStart: string
+  count: number
+}
+
+/** Extended stats — superset of VocabularyStats with richer metrics */
+export interface VocabularyExtendedStats extends VocabularyStats {
+  masteredCount: number
+  reviewedToday: number
+  retentionRate: number
+  totalReviews: number
+  totalCorrectReviews: number
+  weeklyLearning: WeeklyLearningEntry[]
+}

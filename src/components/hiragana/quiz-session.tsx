@@ -1,7 +1,9 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useQuizStore } from '@/store/quiz-store'
+import { HIRAGANA_CHARACTERS } from '@/lib/constants/hiragana-data'
+import { KATAKANA_CHARACTERS } from '@/lib/constants/katakana-data'
 import { QuizProgressBar } from '@/components/hiragana/quiz-progress-bar'
 import { QuizFeedback } from '@/components/hiragana/quiz-feedback'
 import { RecognitionQuestion } from '@/components/hiragana/recognition-question'
@@ -15,13 +17,19 @@ interface QuizSessionProps {
 }
 
 export function QuizSession({ kanaLabel, groups }: QuizSessionProps) {
-  const question = useQuizStore((s) => s.currentQuestion())
-  const progress = useQuizStore((s) => s.progress())
+  const question = useQuizStore((s) => s.questions[s.currentIndex] ?? null)
+  const totalQuestions = useQuizStore((s) => s.questions.length)
   const answers = useQuizStore((s) => s.answers)
   const currentIndex = useQuizStore((s) => s.currentIndex)
   const showingFeedback = useQuizStore((s) => s.showingFeedback)
   const lastAnswerCorrect = useQuizStore((s) => s.lastAnswerCorrect)
-  const availableCharacters = useQuizStore((s) => s.availableCharacters())
+  const config = useQuizStore((s) => s.config)
+  const kanaType = useQuizStore((s) => s.kanaType)
+  const availableCharacters = useMemo(() => {
+    if (!config) return []
+    const allChars = kanaType === 'katakana' ? KATAKANA_CHARACTERS : HIRAGANA_CHARACTERS
+    return allChars.filter((c) => config.groupIds.includes(c.group))
+  }, [config, kanaType])
   const submitAnswer = useQuizStore((s) => s.submitAnswer)
   const nextQuestion = useQuizStore((s) => s.nextQuestion)
 
@@ -46,7 +54,7 @@ export function QuizSession({ kanaLabel, groups }: QuizSessionProps) {
     <div className="space-y-6">
       <QuizProgressBar
         currentIndex={currentIndex}
-        totalCount={progress.total}
+        totalCount={totalQuestions}
         answers={answers}
       />
 

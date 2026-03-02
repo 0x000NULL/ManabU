@@ -3,6 +3,8 @@ import * as path from 'path'
 import { Prisma, PrismaClient } from '@prisma/client'
 import { HIRAGANA_CHARACTERS } from '../src/lib/constants/hiragana-data'
 import { KATAKANA_CHARACTERS } from '../src/lib/constants/katakana-data'
+import { N5_GRAMMAR_PATTERNS } from '../src/lib/constants/grammar-data'
+import { N4_GRAMMAR_PATTERNS } from '../src/lib/constants/grammar-data-n4'
 
 const prisma = new PrismaClient()
 
@@ -239,46 +241,34 @@ async function main() {
   }
 
   // ============================================================================
-  // SEED SAMPLE GRAMMAR PATTERNS
+  // SEED GRAMMAR PATTERNS (from constants)
   // ============================================================================
-  const grammarData = [
-    {
-      pattern: 'は',
-      meaning: 'topic marker particle',
-      formation: 'Noun + は',
-      jlpt_level: 'N5',
-      difficulty: 'beginner',
-      explanation:
-        'The particle は (wa) marks the topic of a sentence. It indicates what the sentence is about.',
-      notes: 'Pronounced "wa" not "ha" when used as a particle.',
-    },
-    {
-      pattern: 'です',
-      meaning: 'to be (polite)',
-      formation: 'Noun/Adjective + です',
-      jlpt_level: 'N5',
-      difficulty: 'beginner',
-      explanation: 'Copula verb in polite form. Used to state that something "is" something.',
-      notes: 'Used to make statements polite.',
-    },
-    {
-      pattern: 'を',
-      meaning: 'direct object marker',
-      formation: 'Noun + を + Verb',
-      jlpt_level: 'N5',
-      difficulty: 'beginner',
-      explanation: 'The particle を (wo/o) marks the direct object of an action.',
-      notes: 'Usually pronounced "o" not "wo".',
-    },
-  ]
-
   console.log('Seeding grammar patterns...')
-  for (const pattern of grammarData) {
-    await prisma.grammarPattern.create({
-      data: pattern,
+  const ALL_GRAMMAR_PATTERNS = [...N5_GRAMMAR_PATTERNS, ...N4_GRAMMAR_PATTERNS]
+  for (const entry of ALL_GRAMMAR_PATTERNS) {
+    const { examples, ...patternData } = entry
+    const upserted = await prisma.grammarPattern.upsert({
+      where: { pattern: entry.pattern },
+      update: patternData,
+      create: patternData,
     })
+
+    // Replace examples: delete existing, then create fresh
+    await prisma.grammarExample.deleteMany({
+      where: { pattern_id: upserted.id },
+    })
+    if (examples.length > 0) {
+      await prisma.grammarExample.createMany({
+        data: examples.map((ex) => ({
+          pattern_id: upserted.id,
+          japanese: ex.japanese,
+          english: ex.english,
+          furigana: ex.furigana ?? null,
+        })),
+      })
+    }
   }
-  console.log(`✓ Seeded ${grammarData.length} grammar patterns`)
+  console.log(`✓ Seeded ${ALL_GRAMMAR_PATTERNS.length} grammar patterns with examples`)
 
   console.log('✅ Database seed completed!')
 }

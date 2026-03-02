@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/button'
 import { useLearnStore } from '@/store/learn-store'
 
 export function LearnCompletion() {
-  const stats = useLearnStore((s) => s.stats())
+  const wordsLearned = useLearnStore((s) => s.learnedIds.size)
+  const dailyTotal = useLearnStore((s) => s.learnedToday)
+  const dailyLimit = useLearnStore((s) => s.dailyLimit)
   const startSession = useLearnStore((s) => s.startSession)
 
-  const hasCapacity = stats.dailyTotal < stats.dailyLimit
+  const hasCapacity = dailyTotal < dailyLimit
 
   return (
     <div className="space-y-8">
@@ -27,9 +29,9 @@ export function LearnCompletion() {
           />
         </svg>
         <h2 className="mt-4 text-2xl font-bold text-foreground">Session Complete</h2>
-        <p className="mt-2 text-4xl font-bold text-primary">{stats.wordsLearned}</p>
+        <p className="mt-2 text-4xl font-bold text-primary">{wordsLearned}</p>
         <p className="text-sm text-muted-foreground">
-          {stats.wordsLearned === 1 ? 'word' : 'words'} learned
+          {wordsLearned === 1 ? 'word' : 'words'} learned
         </p>
       </div>
 
@@ -37,14 +39,14 @@ export function LearnCompletion() {
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Daily progress</span>
           <span className="font-medium text-foreground">
-            {stats.dailyTotal} / {stats.dailyLimit}
+            {dailyTotal} / {dailyLimit}
           </span>
         </div>
         <div className="h-2 overflow-hidden rounded-full bg-muted">
           <div
             className="h-full rounded-full bg-green-500 transition-all duration-300"
             style={{
-              width: `${Math.min((stats.dailyTotal / stats.dailyLimit) * 100, 100)}%`,
+              width: `${Math.min((dailyTotal / dailyLimit) * 100, 100)}%`,
             }}
           />
         </div>
