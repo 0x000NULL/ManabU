@@ -1,5 +1,8 @@
 name: wakaru
 region: sfo
+domains:
+  - domain: wakaru.dev
+    type: PRIMARY
 services:
   - name: wakaru-web
     github:
