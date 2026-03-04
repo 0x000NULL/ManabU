@@ -7,15 +7,18 @@ import {
   serverError,
 } from '@/lib/utils/api-response'
 
-export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ mediaId: string }> },
+) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
 
-    const { id } = await params
+    const { mediaId } = await params
 
     const media = await prisma.mediaContent.findUnique({
-      where: { id },
+      where: { id: mediaId },
       select: {
         id: true,
         title: true,
@@ -43,7 +46,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
     if (!media) return notFoundError('Media not found')
 
     const progressRecords = await prisma.userMediaProgress.findMany({
-      where: { user_id: user.id, media_id: id },
+      where: { user_id: user.id, media_id: mediaId },
       select: {
         episode_number: true,
         progress_seconds: true,
