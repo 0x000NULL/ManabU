@@ -42,3 +42,6 @@ next-env.d.ts
 
 # vocab pipeline cache
 scripts/vocab-pipeline/.cache/
+
+# Audio extraction clips (temporary files)
+/public/audio-clips/*.mp3

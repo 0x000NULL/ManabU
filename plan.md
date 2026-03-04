@@ -336,35 +336,35 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [ ] Add subtitle background for readability
 
 #### Interactive Subtitle Features
-- [ ] Implement word tokenization for Japanese text
-- [ ] Make subtitle words clickable
-- [ ] Create DictionaryPopup component
-- [ ] Integrate JMdict dictionary lookup
-- [ ] Display word, reading, meaning, part of speech in popup
-- [ ] Show example sentences in dictionary popup
-- [ ] Add "Add to SRS" button in dictionary popup
-- [ ] Implement add word to user's SRS deck
+- [x] Implement word tokenization for Japanese text
+- [x] Make subtitle words clickable
+- [x] Create DictionaryPopup component
+- [x] Integrate JMdict dictionary lookup
+- [x] Display word, reading, meaning, part of speech in popup
+- [x] Show example sentences in dictionary popup
+- [x] Add "Add to SRS" button in dictionary popup
+- [x] Implement add word to user's SRS deck
 - [ ] Test dictionary lookup on various words
 
 #### Playback Control Features
-- [ ] Implement "Replay current subtitle" button (R key)
-- [ ] Implement skip backward/forward by subtitle (arrow keys)
-- [ ] Add "Loop current subtitle" toggle for shadowing
-- [ ] Create keyboard shortcuts overlay/help
+- [x] Implement "Replay current subtitle" button (R key)
+- [x] Implement skip backward/forward by subtitle (arrow keys)
+- [x] Add "Loop current subtitle" toggle for shadowing
+- [x] Create keyboard shortcuts overlay/help
 - [ ] Test all playback controls
 
 #### Sentence Mining
-- [ ] Create mined_sentences table
-- [ ] Create "Mine this sentence" button on subtitles
-- [ ] Implement screenshot capture at current timestamp
+- [x] Create mined_sentences table
+- [x] Create "Mine this sentence" button on subtitles
+- [x] Implement screenshot capture at current timestamp
 - [ ] Implement audio clip extraction for sentence
-- [ ] Create `/api/v1/sentences/mine` endpoint (POST)
-- [ ] Save sentence with Japanese, English, audio, screenshot, timestamp
-- [ ] Create `/api/v1/sentences/mine` endpoint (GET - user's mined sentences)
-- [ ] Create mined sentences browsing page
-- [ ] Add mined sentences to SRS review rotation
-- [ ] Implement delete mined sentence
-- [ ] Implement edit mined sentence notes
+- [x] Create `/api/v1/sentences/mine` endpoint (POST)
+- [x] Save sentence with Japanese, English, audio, screenshot, timestamp
+- [x] Create `/api/v1/sentences/mine` endpoint (GET - user's mined sentences)
+- [x] Create mined sentences browsing page
+- [x] Add mined sentences to SRS review rotation
+- [x] Implement delete mined sentence
+- [x] Implement edit mined sentence notes
 - [ ] Test complete sentence mining flow
 
 #### Media Library UI

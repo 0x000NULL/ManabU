@@ -8,6 +8,7 @@ export interface MediaEpisodeData {
   title: string
   title_english: string
   duration_seconds: number
+  video_url?: string
   subtitle_ja_url: string
   subtitle_en_url: string
 }
@@ -42,6 +43,7 @@ export interface MediaContentListItem {
 
 /** API detail response — full content with episodes */
 export interface MediaContentDetailItem extends MediaContentListItem {
+  completed_count: number
   episodes: {
     id: string
     episode_number: number
@@ -49,5 +51,24 @@ export interface MediaContentDetailItem extends MediaContentListItem {
     duration_seconds: number | null
     subtitle_ja_url: string | null
     subtitle_en_url: string | null
+    progress: {
+      progress_seconds: number
+      completed: boolean
+      watched_at: string
+    } | null
   }[]
+}
+
+export interface ImmersionStats {
+  episodesWatched: number
+  episodesCompleted: number
+  totalImmersionMinutes: number
+  sentencesMined: number
+  sentencesDueCount: number
+  weeklyImmersion: WeeklyImmersionEntry[]
+}
+
+export interface WeeklyImmersionEntry {
+  weekStart: string
+  minutes: number
 }

@@ -1,5 +1,19 @@
 import type { MediaContentData } from '@/types/media'
 
+/**
+ * Media Library - Immersion Content
+ * 
+ * NOTE: Update subtitle URLs and video URLs with your DigitalOcean Spaces URLs
+ * Format: https://YOUR-BUCKET-NAME.REGION.cdn.digitaloceanspaces.com/path/to/file
+ * 
+ * Example:
+ * - Bucket: wakaru-media
+ * - Region: sfo3
+ * - CDN URL: https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/shirokuma-cafe/ep01-ja.srt
+ * 
+ * See DEPLOYMENT_GUIDE.md for upload instructions.
+ */
+
 export const MEDIA_LIBRARY: MediaContentData[] = [
   // ============================================================================
   // 1. しろくまカフェ (Shirokuma Cafe) — Beginner / N5
@@ -21,8 +35,9 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         title: 'しろくまカフェへようこそ',
         title_english: 'Welcome to Shirokuma Cafe',
         duration_seconds: 1440,
-        subtitle_ja_url: '/subtitles/shirokuma-cafe/ep01-ja.srt',
-        subtitle_en_url: '/subtitles/shirokuma-cafe/ep01-en.srt',
+        video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/shirokuma-cafe/ep01.mp4', // TODO: Replace with your actual URL
+        subtitle_ja_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/shirokuma-cafe/ep01-ja.srt', // TODO: Replace with your actual URL
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/shirokuma-cafe/ep01-en.srt', // TODO: Replace with your actual URL
       },
       {
         episode_number: 2,
