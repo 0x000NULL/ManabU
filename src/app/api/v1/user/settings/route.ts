@@ -9,9 +9,7 @@ import {
   serverError,
 } from '@/lib/utils/api-response'
 
-const DEFAULT_SETTINGS = {
-  dailyNewWordLimit: 20,
-}
+import { DEFAULT_SETTINGS } from '@/types/settings'
 
 export async function GET() {
   try {

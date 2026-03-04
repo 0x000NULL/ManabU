@@ -114,7 +114,7 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 
 #### Testing & Validation
 - [ ] Test complete hiragana learning flow
-- [ ] Verify all 79 characters display correctly
+- [x] Verify all 79 characters display correctly
 - [ ] Test audio playback on all browsers
 - [ ] Verify progress persists across sessions
 - [ ] Test quiz functionality and scoring
@@ -216,8 +216,8 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 
 #### Testing & Validation
 - [ ] Test complete SRS review flow
-- [ ] Verify SRS algorithm schedules correctly
-- [ ] Test all 4 rating options update intervals properly
+- [x] Verify SRS algorithm schedules correctly
+- [x] Test all 4 rating options update intervals properly
 - [ ] Verify progress persists correctly
 - [ ] Test new word learning flow
 - [ ] Load test with 500+ vocabulary items
@@ -292,48 +292,48 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 ### Phase 1E: Immersion Tools
 
 #### Media Content System
-- [ ] Create media_content table
-- [ ] Create media_episodes table
-- [ ] Create user_media_progress table
-- [ ] Curate initial 5 anime/drama titles
-- [ ] Research legal streaming sources for curated titles
-- [ ] Source Japanese subtitles (.srt/.ass files) for 5 titles
-- [ ] Create English translations for subtitles (or source existing)
-- [ ] Tag media with difficulty levels (beginner/intermediate/advanced)
-- [ ] Add genre tags to media
-- [ ] Create media library seed script
+- [x] Create media_content table
+- [x] Create media_episodes table
+- [x] Create user_media_progress table
+- [x] Curate initial 5 anime/drama titles
+- [x] Research legal streaming sources for curated titles
+- [x] Source Japanese subtitles (.srt/.ass files) for 5 titles
+- [x] Create English translations for subtitles (or source existing)
+- [x] Tag media with difficulty levels (beginner/intermediate/advanced)
+- [x] Add genre tags to media
+- [x] Create media library seed script
 
 #### Media API Endpoints
-- [ ] Create `/api/v1/media` endpoint (list media)
-- [ ] Create `/api/v1/media/:id` endpoint (get media details)
-- [ ] Create `/api/v1/media/:mediaId/episodes/:episodeId` endpoint
-- [ ] Create `/api/v1/media/progress` endpoint (save progress)
-- [ ] Add difficulty and type filtering
-- [ ] Parse and serve subtitle data with episodes
+- [x] Create `/api/v1/media` endpoint (list media)
+- [x] Create `/api/v1/media/:id` endpoint (get media details)
+- [x] Create `/api/v1/media/:mediaId/episodes/:episodeId` endpoint
+- [x] Create `/api/v1/media/progress` endpoint (save progress)
+- [x] Add difficulty and type filtering
+- [x] Parse and serve subtitle data with episodes
 - [ ] Test media API endpoints
 
 #### Video Player Component
-- [ ] Install and configure video.js or similar player
-- [ ] Create VideoPlayer component
-- [ ] Implement video playback controls
-- [ ] Add play/pause (spacebar support)
-- [ ] Add seek forward/backward (arrow keys)
-- [ ] Add playback speed control (0.5x, 0.75x, 1x)
-- [ ] Implement volume controls
-- [ ] Add fullscreen support
+- [x] Install and configure video.js or similar player
+- [x] Create VideoPlayer component
+- [x] Implement video playback controls
+- [x] Add play/pause (spacebar support)
+- [x] Add seek forward/backward (arrow keys)
+- [x] Add playback speed control (0.5x, 0.75x, 1x)
+- [x] Implement volume controls
+- [x] Add fullscreen support
 - [ ] Test video player on multiple browsers
 
 #### Subtitle System
-- [ ] Create subtitle parser for .srt format
-- [ ] Create subtitle parser for .ass format
-- [ ] Implement subtitle timing sync with video
-- [ ] Create SubtitleDisplay component
-- [ ] Display Japanese subtitle with furigana (ruby text)
-- [ ] Display English subtitle simultaneously
-- [ ] Add toggle switches for Japanese/English subtitles
-- [ ] Implement font size adjustment
-- [ ] Style subtitle display (positioning, readability)
-- [ ] Add subtitle background for readability
+- [x] Create subtitle parser for .srt format
+- [x] Create subtitle parser for .ass format
+- [x] Implement subtitle timing sync with video
+- [x] Create SubtitleDisplay component
+- [x] Display Japanese subtitle with furigana (ruby text)
+- [x] Display English subtitle simultaneously
+- [x] Add toggle switches for Japanese/English subtitles
+- [x] Implement font size adjustment
+- [x] Style subtitle display (positioning, readability)
+- [x] Add subtitle background for readability
 
 #### Interactive Subtitle Features
 - [x] Implement word tokenization for Japanese text
@@ -368,23 +368,23 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [ ] Test complete sentence mining flow
 
 #### Media Library UI
-- [ ] Create media library page
-- [ ] Display media cards with cover images
-- [ ] Add difficulty badges to media cards
-- [ ] Implement media search and filtering
-- [ ] Create media detail page (episodes list)
-- [ ] Display user progress (episodes watched)
-- [ ] Create episode selection interface
-- [ ] Add "Resume watching" functionality
-- [ ] Track watch time and completion status
+- [x] Create media library page
+- [x] Display media cards with cover images
+- [x] Add difficulty badges to media cards
+- [x] Implement media search and filtering
+- [x] Create media detail page (episodes list)
+- [x] Display user progress (episodes watched)
+- [x] Create episode selection interface
+- [x] Add "Resume watching" functionality
+- [x] Track watch time and completion status
 
 #### Immersion Progress Tracking
-- [ ] Track episodes watched per user
-- [ ] Track total immersion time (hours)
-- [ ] Track words mined count
-- [ ] Track sentences mined count
-- [ ] Display immersion stats on dashboard
-- [ ] Create immersion progress chart
+- [x] Track episodes watched per user
+- [x] Track total immersion time (hours)
+- [x] Track words mined count
+- [x] Track sentences mined count
+- [x] Display immersion stats on dashboard
+- [x] Create immersion progress chart
 
 #### Testing & Validation
 - [ ] Test video player on Chrome, Firefox, Safari
@@ -400,42 +400,76 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 
 ### Phase 1F: Polish & Launch Prep
 
-#### User Dashboard
-- [ ] Create main dashboard page layout
-- [ ] Display daily overview section
-- [ ] Show SRS reviews due today count
-- [ ] Show new vocabulary available count
-- [ ] Display current study streak
-- [ ] Add quick-start buttons (Review, New Words, Grammar, Immersion)
-- [ ] Create progress stats section
-- [ ] Display hiragana/katakana completion %
-- [ ] Display total vocabulary learned
-- [ ] Display vocabulary mastered count
-- [ ] Display grammar patterns learned
-- [ ] Display total immersion time
-- [ ] Display sentences mined count
-- [ ] Create learning path section with suggested next steps
-- [ ] Show milestone achievements (e.g., "100 words learned!")
-- [ ] Implement milestone detection logic
+#### Classroom Dashboard (Daily Hub)
+
+##### Daily Lesson Card
+- [x] Create `DailyLessonCard` component that calculates today's recommended study
+- [x] Show SRS reviews due count with quick-action button
+- [x] Show new vocabulary available (based on daily limit and learning path)
+- [x] Show grammar practice suggestions (next unlearned pattern or due reviews)
+- [x] Show immersion time recommendation (based on user's daily goal)
+- [x] Display time estimates per activity (e.g., "~15 min for 20 reviews")
+- [x] Implement priority ordering (due reviews first, then new material)
+
+##### Study Streak Tracking
+- [x] Create `StudyDay` Prisma model (`user_id` + `date` unique, `minutes_studied`, `items_reviewed`, `items_learned`)
+- [x] Create streak calculation utility in `src/lib/utils/streak.ts`
+- [x] Implement `GET /api/v1/user/streak` endpoint (current streak, longest streak, today's activity)
+- [x] Create `StreakDisplay` component (current streak count, flame/calendar icon)
+- [x] Create 90-day calendar heatmap component (color intensity by study time)
+- [x] Streaks are informational only — no shame messaging, no loss penalties, no "don't break your streak" (per project philosophy)
+- [x] Hook into existing endpoints to log study activity:
+  - [x] `POST /api/v1/srs/review` — upsert `StudyDay` with items reviewed
+  - [x] `POST /api/v1/srs/learn` — upsert `StudyDay` with items learned
+  - [x] `POST /api/v1/{hiragana|katakana}/progress` — upsert `StudyDay` with kana items
+  - [x] `POST /api/v1/grammar/practice` — upsert `StudyDay` with grammar items
+
+##### Progress Overview by Learning Path
+- [x] Show active learning path name and JLPT level
+- [x] Display current milestone title and description
+- [x] Show progress bars per section (kana / vocabulary / grammar / kanji)
+- [x] Show next milestone with estimated time to completion
+- [x] Link to full learning path page for details
+
+##### Weekly & Monthly Stats
+- [x] Create `GET /api/v1/user/stats/dashboard` endpoint aggregating:
+  - [x] Kana progress (hiragana %, katakana %)
+  - [x] SRS stats (total learned, total mastered, retention rate)
+  - [x] Grammar stats (patterns learned, practice accuracy)
+  - [x] Study time (total this week/month)
+  - [x] Items reviewed (total this week/month)
+- [x] Show comparison with previous period (e.g., "+12 words vs last week")
+- [x] Create simple bar/line chart for weekly learning velocity
+
+##### Next Milestone Preview
+- [x] Show current milestone title and description
+- [x] Display items remaining count and progress percentage
+- [x] Add subtle completion animation (confetti or checkmark) when milestone reached
+- [x] Auto-advance to next milestone on completion
+
+##### Dashboard Layout & Store
+- [x] Layout: top row = streak + daily lesson card; middle = learning path progress; bottom = weekly stats + next milestone
+- [x] Mobile-responsive single-column layout (stacked cards)
+- [x] Create `src/store/dashboard-store.ts` (ephemeral) for dashboard data caching
 
 #### User Settings
-- [ ] Create settings page
-- [ ] Add daily new word limit setting (5-50 range)
-- [ ] Add review schedule preferences
+- [x] Create settings page
+- [x] Add daily new word limit setting (5-50 range)
+- [x] Add review schedule preferences
 - [ ] Add interface language toggle
-- [ ] Add audio autoplay setting
-- [ ] Add furigana display preference (always/hover/never)
-- [ ] Add dark mode toggle (bonus)
-- [ ] Implement settings save to user profile
+- [x] Add audio autoplay setting
+- [x] Add furigana display preference (always/hover/never)
+- [x] Add dark mode toggle (bonus)
+- [x] Implement settings save to user profile
 - [ ] Test settings persistence
 
 #### User Profile
-- [ ] Create profile page
-- [ ] Display user email and display name
-- [ ] Add edit profile functionality
-- [ ] Add change password functionality
-- [ ] Display account creation date
-- [ ] Show lifetime learning statistics
+- [x] Create profile page
+- [x] Display user email and display name
+- [x] Add edit profile functionality
+- [x] Add change password functionality
+- [x] Display account creation date
+- [x] Show lifetime learning statistics
 
 #### Mobile Optimization
 - [ ] Test all pages on mobile devices (iOS Safari, Android Chrome)
@@ -484,16 +518,117 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 - [ ] Test keyboard navigation throughout app
 - [ ] Add screen reader support where needed
 
-#### User Onboarding
-- [ ] Create landing page (public-facing)
-- [ ] Design onboarding flow for new users
-- [ ] Create welcome screen after registration
-- [ ] Add product tour of dashboard (optional)
-- [ ] Create first lesson prompt (Hiragana vowels)
-- [ ] Add daily study goal setting in onboarding
-- [ ] Create help/documentation section
-- [ ] Add tooltips for key features
+#### User Onboarding Flow
+
+##### Infrastructure
+- [ ] Add `onboardingCompleted` flag to User `settings` JSONB field
+- [ ] Implement first-login detection (check `onboardingCompleted` on auth)
+- [ ] Create `/onboarding` protected route in `src/app/(dashboard)/onboarding/page.tsx`
+- [ ] Add `/onboarding` to `PROTECTED_ROUTES` in `src/proxy.ts` and `config.matcher`
+- [ ] Redirect from registration and login to `/onboarding` when `onboardingCompleted` is false
+- [ ] Create `src/store/onboarding-store.ts` (ephemeral, multi-step wizard state)
+- [ ] Create `src/lib/validations/onboarding.ts` with Zod schemas for each step
+
+##### Step 1: Welcome Screen
+- [ ] Create `src/components/onboarding/WelcomeStep.tsx`
+- [ ] Animated welcome with app name and brief tagline
+- [ ] Collect learning motivation (multi-select): anime/manga, travel, career, intellectual challenge, heritage, other
+- [ ] Store motivation in User `settings` JSONB
+
+##### Step 2: Experience Assessment (Quick Quiz)
+- [ ] Create `src/components/onboarding/ExperienceStep.tsx`
+- [ ] 5 hiragana recognition questions (show character, pick romaji from 4 options)
+- [ ] 5 common word meaning questions (show Japanese word, pick English meaning)
+- [ ] 3 basic sentence comprehension questions (show simple sentence, pick meaning)
+- [ ] Score to estimate level: 0-3 correct = absolute beginner, 4-8 = some knowledge, 9-13 = intermediate
+- [ ] Skip option for users who want to go straight to full placement test (Phase 2)
+
+##### Step 3: Goal Setting
+- [ ] Create `src/components/onboarding/GoalStep.tsx`
+- [ ] Target JLPT level selection: N5 / N4 / N3
+- [ ] Daily study time commitment: 15 / 30 / 45 / 60 minutes
+- [ ] Learning pace preference: relaxed / normal / intensive
+- [ ] Display estimated timeline calculation based on selections (e.g., "~6 months to N5 at 30 min/day")
+- [ ] Store all goal settings in User `settings` JSONB
+
+##### Step 4: Learning Path Selection
+- [ ] Create `src/components/onboarding/PathSelectionStep.tsx`
+- [ ] Show recommended learning path based on assessment result and target level
+- [ ] Display path overview (milestone count, estimated duration, content summary)
+- [ ] Allow user to override recommended path
+- [ ] Create `UserLearningPath` record for selected path
+
+##### Step 5: Completion
+- [ ] Create `src/components/onboarding/CompletionStep.tsx`
+- [ ] Display personalized study plan summary (path, daily goal, first milestone)
+- [ ] Set `onboardingCompleted = true` in User settings
+- [ ] Redirect to dashboard with one-time welcome banner
+- [ ] Welcome banner shows "Your first step: [first milestone name]" with action button
+
+##### Onboarding API Endpoints
+- [ ] Create `POST /api/v1/onboarding/assessment` — submit quiz answers, return estimated level
+- [ ] Create `POST /api/v1/onboarding/complete` — save goals, assign learning path, set `onboardingCompleted`
+- [ ] Create `GET /api/v1/onboarding/status` — check if onboarding is completed (used by proxy/redirect logic)
+
+##### Landing Page & Help
+- [ ] Create landing page (public-facing) at `/` for unauthenticated users
+- [ ] Create help/documentation section accessible from dashboard
+- [ ] Add tooltips for key features on first visit
 - [ ] Create FAQ page
+
+#### Learning Paths Infrastructure & N5 Path
+
+##### Database Models
+- [ ] Create `LearningPath` Prisma model (`id`, `name`, `slug`, `jlpt_level`, `description`, `display_order`)
+- [ ] Create `LearningPathMilestone` Prisma model (`id`, `path_id`, `title`, `description`, `category`, `target_type`, `target_count`, `display_order`, `prerequisites` JSONB)
+- [ ] Create `UserLearningPath` Prisma model (`id`, `user_id`, `path_id`, `started_at`, `completed_at`, `current_milestone_id`)
+- [ ] Add foreign keys and indexes for efficient progress queries
+- [ ] Generate migration and update Prisma client
+
+##### N5 Path Definition (8 Milestones)
+Based on actual JLPT N5 curriculum requirements (~800 vocab, ~100 kanji, ~40 grammar):
+- [ ] Milestone 1: **Hiragana Foundation** — learn all 79 hiragana characters (existing system, track via `UserProgress` where `category = 'hiragana'`)
+- [ ] Milestone 2: **Katakana Foundation** — learn all 79 katakana characters (existing system, track via `UserProgress` where `category = 'katakana'`)
+- [ ] Milestone 3: **First 100 Words** — learn 100 most frequent N5 vocabulary (subset of 618 N5 words in database)
+- [ ] Milestone 4: **Basic Grammar** — master 15 essential N5 grammar patterns (subset of 36 N5 patterns in database)
+- [ ] Milestone 5: **N5 Vocabulary** — learn 300 N5 vocabulary words
+- [ ] Milestone 6: **N5 Grammar Complete** — master all ~40 N5 grammar patterns (need ~4 more patterns beyond current 36)
+- [ ] Milestone 7: **N5 Kanji** — learn 100 N5 kanji (blocked until kanji data populated in Phase 2)
+- [ ] Milestone 8: **N5 Reading** — complete 5 N5-level reading passages (blocked until Phase 2 reading content)
+
+##### JLPT Content Requirements Reference
+
+| Level | Vocabulary | Kanji | Grammar | Current Coverage |
+|-------|-----------|-------|---------|-----------------|
+| N5 | ~800 | ~100 | ~40 patterns | 618 vocab, 0 kanji, 36 grammar |
+| N4 | ~1,500 cumul. | ~300 cumul. | ~200 cumul. | 546 vocab, 0 kanji, 28 grammar |
+| N3 | ~3,750 cumul. | ~650 cumul. | ~350 cumul. | 1,836 vocab, 0 kanji, 0 grammar |
+
+##### Learning Path API Endpoints
+- [ ] Create `GET /api/v1/learning-paths` — list all available paths with enrollment status
+- [ ] Create `GET /api/v1/learning-paths/:slug` — path detail with milestones and completion status
+- [ ] Create `POST /api/v1/learning-paths/:slug/enroll` — enroll user in a path (creates `UserLearningPath`)
+- [ ] Create `GET /api/v1/learning-paths/progress` — summary of user's active path progress
+- [ ] Create `GET /api/v1/learning-paths/progress/:slug` — detailed milestone-by-milestone progress for a path
+
+##### Progress Calculation
+- [ ] Create `src/lib/utils/learning-path-progress.ts` — queries `UserProgress` counts per category to determine milestone completion
+- [ ] Calculate completion percentage per milestone based on `target_count` vs actual progress
+- [ ] Determine milestone unlock status based on prerequisites JSONB
+- [ ] Calculate overall path completion percentage
+
+##### Constants, Types & Store
+- [ ] Create `src/lib/constants/learning-paths.ts` — path definitions and milestone data (importable by seed script)
+- [ ] Create `src/types/learning-path.ts` — `LearningPath`, `Milestone`, `UserPathProgress` interfaces
+- [ ] Create `src/store/learning-path-store.ts` (ephemeral) for path browsing and progress state
+
+##### Learning Path UI
+- [ ] Create `/learning-path` route in `src/app/(dashboard)/learning-path/page.tsx`
+- [ ] Create `LearningPathOverview` page component showing all milestones as vertical timeline
+- [ ] Create `MilestoneCard` component (title, description, progress bar, status badge: locked/active/complete)
+- [ ] Create `MilestoneDetail` component (expanded view with links to relevant study pages)
+- [ ] Link milestone actions to existing study pages (e.g., "Start Hiragana" → `/hiragana`)
+- [ ] Add "Learning Path" to `dashboardNavItems` in `src/lib/constants/navigation.ts`
 
 #### Documentation
 - [ ] Write README.md with setup instructions
@@ -776,23 +911,76 @@ Build in stages, validating each phase before moving forward. Each phase deliver
 ### Placement Test
 
 #### Test Design
-- [ ] Design hiragana/katakana recognition test
-- [ ] Create vocabulary assessment (adaptive difficulty)
-- [ ] Create grammar assessment questions
-- [ ] Create kanji recognition test
-- [ ] Create reading comprehension test (various levels)
-- [ ] Implement adaptive test logic (stops when user consistently misses)
+- [ ] Design hiragana recognition section (10 characters, random from all groups)
+- [ ] Design katakana recognition section (10 characters, random from all groups)
+- [ ] Create adaptive vocabulary assessment: start at N5, advance to N4 if 70%+ correct, advance to N3 if 70%+ correct
+- [ ] Create grammar assessment (10 questions spanning N5 → N4 → N3, adaptive)
+- [ ] Create kanji recognition section (20 kanji across N5/N4/N3 levels)
+- [ ] Implement adaptive test logic (stops when user scores <50% at a level)
+- [ ] Design scoring rubric: 70%+ accuracy at a level = proficiency at that level
 
 #### Test Implementation
-- [ ] Create placement test UI
-- [ ] Implement test scoring algorithm
-- [ ] Estimate user level from test results
-- [ ] Generate customized starting recommendations
-- [ ] Allow user to override placement
+- [ ] Create placement test UI with progress indicator and section labels
+- [ ] Implement test scoring algorithm with per-section and overall scores
+- [ ] Map scores to JLPT levels (e.g., 70%+ N5 vocab + 70%+ N5 grammar = N5 proficient)
+- [ ] Auto-enroll user in recommended learning path based on results
+- [ ] Auto-mark completed milestones for demonstrated proficiency (e.g., if hiragana 90%+, mark "Hiragana Foundation" complete)
+- [ ] Allow user to override placement and choose a different path
+- [ ] Create `POST /api/v1/placement-test/submit` endpoint (submit answers, return level + recommended path)
+- [ ] Create `GET /api/v1/placement-test/status` endpoint (check if test taken, retrieve results)
+
+#### Integration with Onboarding
+- [ ] Full placement test available for users who indicate prior knowledge in onboarding Step 2
+- [ ] Quick quiz (onboarding Step 2) serves as lightweight placement for beginners
+- [ ] Placement test results feed into learning path enrollment and milestone auto-completion
+- [ ] Allow retake from user settings page (overwrites previous results)
 
 #### Testing
-- [ ] Test placement accuracy with various skill levels
-- [ ] Verify recommendations are appropriate
+- [ ] Test placement accuracy with various skill levels (beginner, intermediate, advanced)
+- [ ] Verify auto-enrollment selects correct learning path
+- [ ] Verify milestone auto-completion matches demonstrated proficiency
+- [ ] Test adaptive difficulty progression (N5 → N4 → N3)
+
+---
+
+### Learning Paths Expansion (N4 & N3)
+
+#### N4 Learning Path
+Based on cumulative JLPT N4 requirements (~1,500 vocab, ~300 kanji, ~200 grammar):
+- [ ] Prerequisite: N5 path completion or placement test skip
+- [ ] Milestone 1: **N4 Vocab Core** — learn 300 most frequent N4 vocabulary words (subset of 546 N4 words in database)
+- [ ] Milestone 2: **N4 Grammar Foundation** — master 25 essential N4 grammar patterns (subset of current 28 N4 patterns)
+- [ ] Milestone 3: **N4 Vocab Complete** — learn all 546 N4 vocabulary words
+- [ ] Milestone 4: **N4 Grammar Complete** — master all ~60 N4 grammar patterns (need ~30 more beyond current 28)
+- [ ] Milestone 5: **N4 Kanji** — learn 200 additional N4 kanji (requires Phase 2 kanji system)
+- [ ] Milestone 6: **N4 Reading** — complete 10 N4-level reading passages (requires Phase 2 reading content)
+- [ ] Milestone 7: **N4 Listening** — complete 5 N4-level listening exercises (requires Phase 2 listening content)
+- [ ] Seed N4 path and milestone data
+
+#### N3 Learning Path
+Based on cumulative JLPT N3 requirements (~3,750 vocab, ~650 kanji, ~350 grammar):
+- [ ] Prerequisite: N4 path completion or placement test skip
+- [ ] Milestone 1: **N3 Vocab Core** — learn 500 most frequent N3 vocabulary words (subset of 1,836 N3 words in database)
+- [ ] Milestone 2: **N3 Grammar Foundation** — master 30 essential N3 grammar patterns (need all ~80 N3 patterns, none exist yet)
+- [ ] Milestone 3: **N3 Vocab Extended** — learn 1,000 N3 vocabulary words
+- [ ] Milestone 4: **N3 Grammar Complete** — master all ~80 N3 grammar patterns
+- [ ] Milestone 5: **N3 Kanji** — learn 350 additional N3 kanji (requires Phase 2 kanji system)
+- [ ] Milestone 6: **N3 Reading** — complete 15 N3-level reading passages (requires Phase 2 reading content)
+- [ ] Milestone 7: **N3 Immersion** — log 20+ hours of immersion time (requires Phase 1E immersion tracking)
+- [ ] Seed N3 path and milestone data
+
+#### Learning Path Enhancements
+- [ ] Allow users to switch learning paths (with progress preserved)
+- [ ] Integrate learning path progress into JLPT Dashboard (Phase 2)
+- [ ] Placement test auto-skips completed milestones when enrolling in a path
+- [ ] Calculate and display JLPT readiness score based on path progress vs curriculum requirements
+- [ ] Add path completion certificate/summary page
+
+#### Testing
+- [ ] Verify N4 prerequisite enforcement (N5 complete or placement skip)
+- [ ] Verify N3 prerequisite enforcement (N4 complete or placement skip)
+- [ ] Test path switching preserves existing progress
+- [ ] Test milestone auto-completion from placement test results
 
 ---
 
