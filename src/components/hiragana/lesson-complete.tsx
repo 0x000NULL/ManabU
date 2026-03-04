@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -24,13 +24,8 @@ export function LessonComplete({
   routePrefix = '/hiragana',
   groups = [],
 }: LessonCompleteProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
   const { submitQuizResults } = useProgressStore()
   const progress = useProgressStore((s) => s[kanaType])
-
-  useEffect(() => {
-    cardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }, [])
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -74,7 +69,7 @@ export function LessonComplete({
 
   if (status === 'success') {
     return (
-      <div ref={cardRef}>
+      <div>
         <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/30">
           <CardContent className="space-y-4 text-center">
             <div className="text-2xl">&#10003;</div>
@@ -109,7 +104,7 @@ export function LessonComplete({
   }
 
   return (
-    <div ref={cardRef}>
+    <div>
       <Card>
         <CardContent className="space-y-4 text-center">
           <p className="text-lg font-semibold text-foreground">Lesson Complete</p>

@@ -92,6 +92,18 @@ export default function KatakanaGroupLessonPage() {
         onCharacterClick={setCurrentIndex}
       />
 
+      {/* Lesson complete section on last character */}
+      {currentIndex === characters.length - 1 && (
+        <LessonComplete
+          characters={characters}
+          groupName={group.name}
+          groupId={params.groupId}
+          kanaType="katakana"
+          routePrefix="/katakana"
+          groups={KATAKANA_GROUPS}
+        />
+      )}
+
       {/* Main content */}
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Left column: Character + Stroke order */}
@@ -127,17 +139,6 @@ export default function KatakanaGroupLessonPage() {
         className="border-t border-border pt-4"
       />
 
-      {/* Lesson complete section on last character */}
-      {currentIndex === characters.length - 1 && (
-        <LessonComplete
-          characters={characters}
-          groupName={group.name}
-          groupId={params.groupId}
-          kanaType="katakana"
-          routePrefix="/katakana"
-          groups={KATAKANA_GROUPS}
-        />
-      )}
     </div>
   )
 }

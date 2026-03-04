@@ -92,6 +92,17 @@ export default function GroupLessonPage() {
         onCharacterClick={setCurrentIndex}
       />
 
+      {/* Lesson complete section on last character */}
+      {currentIndex === characters.length - 1 && (
+        <LessonComplete
+          characters={characters}
+          groupName={group.name}
+          groupId={params.groupId}
+          kanaType="hiragana"
+          groups={HIRAGANA_GROUPS}
+        />
+      )}
+
       {/* Main content */}
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Left column: Character + Stroke order */}
@@ -125,16 +136,6 @@ export default function GroupLessonPage() {
         className="border-t border-border pt-4"
       />
 
-      {/* Lesson complete section on last character */}
-      {currentIndex === characters.length - 1 && (
-        <LessonComplete
-          characters={characters}
-          groupName={group.name}
-          groupId={params.groupId}
-          kanaType="hiragana"
-          groups={HIRAGANA_GROUPS}
-        />
-      )}
     </div>
   )
 }
