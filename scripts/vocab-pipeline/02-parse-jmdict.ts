@@ -23,7 +23,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import { mapPartOfSpeech } from './lib/pos-mapping'
-import type { RawWord } from './lib/types'
+import type { RawWord, WordSense } from './lib/types'
 
 const CACHE_DIR = path.join(__dirname, '.cache')
 const INPUT_FILE = path.join(CACHE_DIR, 'jmdict-eng-common.json')
@@ -36,6 +36,8 @@ interface JMdictEntry {
   sense: Array<{
     partOfSpeech: string[]
     gloss: Array<{ lang: string; text: string }>
+    field: string[]
+    misc: string[]
   }>
 }
 
@@ -95,12 +97,42 @@ export default async function parseJMdict(): Promise<{ count: number; outputFile
     const allPos = entry.sense.flatMap((s) => s.partOfSpeech)
     const part_of_speech = mapPartOfSpeech(allPos)
 
+    // Extract all senses
+    const senses: WordSense[] = entry.sense.map((s) => ({
+      meanings: s.gloss.map((g) => g.text),
+      pos: mapPartOfSpeech(s.partOfSpeech),
+    }))
+
+    // Determine is_common from kanji or kana
+    const is_common = !!(entry.kanji[0]?.common || entry.kana[0]?.common)
+
+    // Derive verb transitivity from POS tags
+    const hasVi = allPos.includes('vi')
+    const hasVt = allPos.includes('vt')
+    let verb_transitivity: RawWord['verb_transitivity'] = null
+    if (hasVi && hasVt) verb_transitivity = 'both'
+    else if (hasVi) verb_transitivity = 'intransitive'
+    else if (hasVt) verb_transitivity = 'transitive'
+
+    // Collect domain and misc tags (deduplicated)
+    const domainSet = new Set<string>()
+    const miscSet = new Set<string>()
+    for (const s of entry.sense) {
+      if (s.field) for (const f of s.field) domainSet.add(f)
+      if (s.misc) for (const m of s.misc) miscSet.add(m)
+    }
+
     words.push({
       word,
       reading,
       meaning,
       part_of_speech,
       tags: [part_of_speech],
+      senses,
+      is_common,
+      verb_transitivity,
+      domain_tags: [...domainSet],
+      misc_tags: [...miscSet],
     })
   }
 

@@ -3,6 +3,7 @@ import { getAuthUser } from '@/lib/auth'
 import prisma from '@/lib/db'
 import { srsLearnSchema } from '@/lib/validations/srs'
 import { createNewCard, getNextReviewDate } from '@/lib/utils/srs-algorithm'
+import { recordStudyActivity } from '@/lib/utils/study-day'
 import {
   successResponse,
   createdResponse,
@@ -102,6 +103,8 @@ export async function POST(request: NextRequest) {
         created_at: true,
       },
     })
+
+    await recordStudyActivity(user.id, { itemsLearned: 1 })
 
     return createdResponse({
       alreadyExists: false,

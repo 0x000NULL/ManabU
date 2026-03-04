@@ -4,6 +4,7 @@ import prisma from '@/lib/db'
 import { srsReviewSchema } from '@/lib/validations/srs'
 import { calculateNextReview } from '@/lib/utils/srs-algorithm'
 import type { SRSCard } from '@/types/progress'
+import { recordStudyActivity } from '@/lib/utils/study-day'
 import {
   successResponse,
   validationError,
@@ -81,6 +82,8 @@ export async function POST(request: NextRequest) {
         correct_reviews: true,
       },
     })
+
+    await recordStudyActivity(user.id, { itemsReviewed: 1 })
 
     return successResponse({
       id: updated.id,

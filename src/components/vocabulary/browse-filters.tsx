@@ -15,6 +15,8 @@ const JLPT_OPTIONS: { label: string; value: JlptLevel | null }[] = [
   { label: 'N5', value: 'N5' },
   { label: 'N4', value: 'N4' },
   { label: 'N3', value: 'N3' },
+  { label: 'N2', value: 'N2' },
+  { label: 'N1', value: 'N1' },
 ]
 
 const FREQUENCY_OPTIONS: { label: string; value: FrequencyTier | null }[] = [
@@ -23,6 +25,7 @@ const FREQUENCY_OPTIONS: { label: string; value: FrequencyTier | null }[] = [
   { label: 'Core', value: 'core' },
   { label: 'Intermediate', value: 'intermediate' },
   { label: 'Expanding', value: 'expanding' },
+  { label: 'Advanced', value: 'advanced' },
 ]
 
 function chipClass(active: boolean): string {

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
 import { speakVocab } from '@/lib/utils/vocabulary'
 import { getFrequencyTier } from '@/lib/utils/vocabulary'
+import { isRichTags } from '@/types/vocabulary'
 import type { VocabularyDetailItem } from '@/types/vocabulary'
 
 const TIER_LABELS: Record<string, string> = {
@@ -87,7 +88,22 @@ export function VocabularyDetailModal({
                   </button>
                 </div>
                 <p className="mt-1 text-lg text-muted-foreground">{item.reading}</p>
-                <p className="mt-2 text-base text-foreground">{item.meaning}</p>
+                {isRichTags(item.tags) &&
+                item.tags.senses &&
+                item.tags.senses.length > 1 ? (
+                  <ol className="mt-2 list-inside list-decimal space-y-0.5 text-base text-foreground">
+                    {item.tags.senses.map((s, i) => (
+                      <li key={i}>
+                        {s.meanings.join('; ')}
+                        {s.pos !== item.part_of_speech && (
+                          <span className="ml-1 text-xs text-muted-foreground">({s.pos})</span>
+                        )}
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="mt-2 text-base text-foreground">{item.meaning}</p>
+                )}
               </div>
             </div>
 
@@ -113,6 +129,33 @@ export function VocabularyDetailModal({
                   #{item.frequency_rank}
                 </span>
               )}
+              {isRichTags(item.tags) && item.tags.transitivity && (
+                <span className="rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
+                  {item.tags.transitivity === 'both'
+                    ? 'Trans. & Intrans.'
+                    : item.tags.transitivity === 'transitive'
+                      ? 'Transitive'
+                      : 'Intransitive'}
+                </span>
+              )}
+              {isRichTags(item.tags) &&
+                item.tags.domains?.map((d) => (
+                  <span
+                    key={d}
+                    className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs text-teal-700 dark:bg-teal-900/30 dark:text-teal-400"
+                  >
+                    {d}
+                  </span>
+                ))}
+              {isRichTags(item.tags) &&
+                item.tags.misc?.map((m) => (
+                  <span
+                    key={m}
+                    className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400"
+                  >
+                    {m}
+                  </span>
+                ))}
             </div>
 
             {/* Example sentences */}

@@ -8,6 +8,7 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner'
 import { ImmersionStatsDisplay } from '@/components/immersion/immersion-stats'
 import { ImmersionChart } from '@/components/immersion/immersion-chart'
 import { MediaCard } from '@/components/immersion/media-card'
+import { ContinueWatchingSection } from '@/components/immersion/continue-watching'
 import { useMediaStore } from '@/store/media-store'
 import type { ImmersionStats, MediaType, MediaDifficulty } from '@/types/media'
 
@@ -215,6 +216,9 @@ export default function ImmersionPage() {
           <ImmersionChart data={stats.weeklyImmersion} />
         </div>
       )}
+
+      {/* Continue Watching */}
+      <ContinueWatchingSection />
 
       {/* Media Library */}
       <div id="library" className="space-y-4">

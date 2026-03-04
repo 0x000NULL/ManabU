@@ -3,6 +3,7 @@ import { getAuthUser } from '@/lib/auth'
 import prisma from '@/lib/db'
 import { quizResultSchema } from '@/lib/validations/progress'
 import { processReview } from '@/lib/utils/srs-lite'
+import { recordStudyActivity } from '@/lib/utils/study-day'
 import {
   successResponse,
   validationError,
@@ -174,6 +175,12 @@ export async function handleProgressPOST(request: NextRequest, kanaType: KanaTyp
       aggregated.set(char, counts.correct / counts.total > 0.5)
     }
 
+    const existingKanaProgress = await prisma.userProgress.findMany({
+      where: { user_id: user.id, category: kanaType, item_id: { in: kanaRecords.map((k) => k.id) } },
+      select: { item_id: true },
+    })
+    const existingKanaIds = new Set(existingKanaProgress.map((p) => p.item_id))
+
     await prisma.$transaction(async (tx) => {
       for (const [character, isCorrect] of aggregated) {
         const kana = charToKana.get(character)
@@ -226,6 +233,9 @@ export async function handleProgressPOST(request: NextRequest, kanaType: KanaTyp
         })
       }
     })
+
+    const newlyLearned = kanaRecords.filter((k) => !existingKanaIds.has(k.id)).length
+    await recordStudyActivity(user.id, { itemsReviewed: answers.length, itemsLearned: newlyLearned })
 
     const { allKana, progressMap } = await fetchKanaAndProgress(user.id, kanaType)
     const summary = buildSummary(allKana, progressMap)

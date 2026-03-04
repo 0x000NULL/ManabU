@@ -48,7 +48,13 @@ export default async function generateSeedData(): Promise<{
     part_of_speech: w.part_of_speech,
     jlpt_level: w.jlpt_level,
     frequency_rank: w.frequency_rank,
-    tags: w.tags,
+    tags: {
+      senses: w.senses ?? [],
+      is_common: w.is_common ?? false,
+      transitivity: w.verb_transitivity ?? null,
+      domains: w.domain_tags ?? [],
+      misc: w.misc_tags ?? [],
+    },
   }))
 
   const vocabPath = path.join(DATA_DIR, 'vocabulary.json')

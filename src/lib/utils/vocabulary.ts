@@ -6,17 +6,17 @@ import type { FrequencyTier } from '@/types/vocabulary'
  * | Rank       | Tier          |
  * |------------|---------------|
  * | 1-500      | essential     |
- * | 501-1000   | core          |
- * | 1001-2000  | intermediate  |
- * | 2001-3000  | expanding     |
- * | 3001+      | advanced      |
+ * | 501-1500   | core          |
+ * | 1501-3500  | intermediate  |
+ * | 3501-6000  | expanding     |
+ * | 6001+      | advanced      |
  */
 export function getFrequencyTier(rank: number | null): FrequencyTier | null {
   if (rank === null) return null
   if (rank <= 500) return 'essential'
-  if (rank <= 1000) return 'core'
-  if (rank <= 2000) return 'intermediate'
-  if (rank <= 3000) return 'expanding'
+  if (rank <= 1500) return 'core'
+  if (rank <= 3500) return 'intermediate'
+  if (rank <= 6000) return 'expanding'
   return 'advanced'
 }
 

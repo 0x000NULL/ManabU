@@ -6,6 +6,10 @@ import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
 import { useProgressStore } from '@/store/progress-store'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { DailyLessonCard } from '@/components/dashboard/daily-lesson-card'
+import { LearningPathProgress } from '@/components/dashboard/learning-path-progress'
+import { StreakDisplay } from '@/components/dashboard/streak-display'
+import { WeeklyStatsCard } from '@/components/dashboard/weekly-stats-card'
 import type { GrammarProgressStats } from '@/types/grammar'
 
 function HiraganaStatus({ onUnauthorized }: { onUnauthorized: () => void }) {
@@ -88,6 +92,14 @@ export default function DashboardPage() {
           Welcome{user?.displayName ? `, ${user.displayName}` : ''}
         </h1>
         <p className="mt-1 text-muted-foreground">Your Japanese learning journey starts here.</p>
+      </div>
+
+      <StreakDisplay onUnauthorized={handleUnauthorized} />
+      <DailyLessonCard onUnauthorized={handleUnauthorized} />
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <LearningPathProgress onUnauthorized={handleUnauthorized} />
+        <WeeklyStatsCard onUnauthorized={handleUnauthorized} />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">

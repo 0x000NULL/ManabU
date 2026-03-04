@@ -25,6 +25,8 @@ model User {
   minedSentences    MinedSentence[]
   mediaProgress     UserMediaProgress[]
   resetTokens       PasswordResetToken[]
+  studyDays         StudyDay[]
+  learningPaths     UserLearningPath[]
 
   @@map("users")
 }
@@ -46,6 +48,82 @@ model PasswordResetToken {
   @@index([token])
   @@index([user_id])
   @@map("password_reset_tokens")
+}
+
+// ============================================================================
+// STUDY DAY TRACKING
+// ============================================================================
+
+model StudyDay {
+  id              String   @id @default(cuid())
+  user_id         String
+  date            DateTime @db.Date
+  minutes_studied Int      @default(0)
+  items_reviewed  Int      @default(0)
+  items_learned   Int      @default(0)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@unique([user_id, date])
+  @@index([user_id, date])
+  @@map("study_days")
+}
+
+// ============================================================================
+// LEARNING PATHS
+// ============================================================================
+
+model LearningPath {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  jlpt_level    String
+  description   String   @db.Text
+  display_order Int      @default(0)
+  is_available  Boolean  @default(true)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  milestones  LearningPathMilestone[]
+  enrollments UserLearningPath[]
+
+  @@index([display_order])
+  @@map("learning_paths")
+}
+
+model LearningPathMilestone {
+  id            String  @id @default(cuid())
+  path_id       String
+  title         String
+  description   String  @db.Text
+  category      String // hiragana, katakana, vocabulary, grammar, kanji, reading
+  target_count  Int
+  display_order Int     @default(0)
+  jlpt_level    String?
+  is_blocked    Boolean @default(false)
+  link_href     String?
+
+  path LearningPath @relation(fields: [path_id], references: [id], onDelete: Cascade)
+
+  @@index([path_id, display_order])
+  @@map("learning_path_milestones")
+}
+
+model UserLearningPath {
+  id           String    @id @default(cuid())
+  user_id      String
+  path_id      String
+  started_at   DateTime  @default(now())
+  completed_at DateTime?
+
+  user User         @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  path LearningPath @relation(fields: [path_id], references: [id], onDelete: Cascade)
+
+  @@unique([user_id, path_id])
+  @@index([user_id])
+  @@map("user_learning_paths")
 }
 
 // ============================================================================

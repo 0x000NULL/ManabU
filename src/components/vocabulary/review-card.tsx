@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ReviewRatingButtons } from '@/components/vocabulary/review-rating-buttons'
 import { speakVocab } from '@/lib/utils/vocabulary'
+import { isRichTags } from '@/types/vocabulary'
 import type { Rating } from '@/types/progress'
 import type { DueReviewItem } from '@/types/review'
 
@@ -53,7 +54,17 @@ export function ReviewCard({ item, isRevealed, onReveal, onRate, isSubmitting }:
           <div className="space-y-4">
             <div className="space-y-1 text-center">
               <p className="text-xl font-medium text-foreground">{item.reading}</p>
-              <p className="text-lg text-muted-foreground">{item.meaning}</p>
+              {isRichTags(item.tags) &&
+              item.tags.senses &&
+              item.tags.senses.length > 1 ? (
+                <ol className="list-inside list-decimal space-y-0.5 text-left text-base text-muted-foreground">
+                  {item.tags.senses.map((s, i) => (
+                    <li key={i}>{s.meanings.join('; ')}</li>
+                  ))}
+                </ol>
+              ) : (
+                <p className="text-lg text-muted-foreground">{item.meaning}</p>
+              )}
               <div className="flex items-center justify-center gap-2">
                 {item.part_of_speech && (
                   <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground">
@@ -63,6 +74,15 @@ export function ReviewCard({ item, isRevealed, onReveal, onRate, isSubmitting }:
                 {item.jlpt_level && (
                   <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                     {item.jlpt_level}
+                  </span>
+                )}
+                {isRichTags(item.tags) && item.tags.transitivity && (
+                  <span className="rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-medium text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
+                    {item.tags.transitivity === 'both'
+                      ? 'Trans. & Intrans.'
+                      : item.tags.transitivity === 'transitive'
+                        ? 'Transitive'
+                        : 'Intransitive'}
                   </span>
                 )}
               </div>

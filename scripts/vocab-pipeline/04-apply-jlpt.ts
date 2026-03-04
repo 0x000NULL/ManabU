@@ -1,8 +1,8 @@
 /**
- * Step 4: Apply JLPT levels and select top 3,000 words
+ * Step 4: Apply JLPT levels and select top 10,000 words
  *
- * Reads JLPT N5/N4/N3 lists, matches to enriched words,
- * then selects top 3,000 prioritized by:
+ * Reads JLPT N5/N4/N3/N2/N1 lists, matches to enriched words,
+ * then selects top 10,000 prioritized by:
  *   1. Has both frequency rank AND JLPT level (sorted by rank ascending)
  *   2. Has frequency rank only (sorted by rank ascending)
  *   3. Has JLPT level only (fills remaining slots)
@@ -19,7 +19,7 @@ const CACHE_DIR = path.join(__dirname, '.cache')
 const INPUT_FILE = path.join(CACHE_DIR, 'intermediate', '02-with-frequency.json')
 const OUTPUT_FILE = path.join(CACHE_DIR, 'intermediate', '03-with-jlpt.json')
 
-const TARGET_COUNT = 3000
+const TARGET_COUNT = 10000
 
 interface JlptEntry {
   word: string
@@ -38,6 +38,8 @@ export default async function applyJlpt(): Promise<{ count: number; outputFile: 
     { level: 'N5', entries: loadJlptList('jlpt-n5.json') },
     { level: 'N4', entries: loadJlptList('jlpt-n4.json') },
     { level: 'N3', entries: loadJlptList('jlpt-n3.json') },
+    { level: 'N2', entries: loadJlptList('jlpt-n2.json') },
+    { level: 'N1', entries: loadJlptList('jlpt-n1.json') },
   ]
 
   // Build JLPT lookup: word → level (lowest level wins, i.e. N5 < N4 < N3)
@@ -114,8 +116,12 @@ export default async function applyJlpt(): Promise<{ count: number; outputFile: 
   const n5 = selected.filter((w) => w.jlpt_level === 'N5').length
   const n4 = selected.filter((w) => w.jlpt_level === 'N4').length
   const n3 = selected.filter((w) => w.jlpt_level === 'N3').length
+  const n2 = selected.filter((w) => w.jlpt_level === 'N2').length
+  const n1 = selected.filter((w) => w.jlpt_level === 'N1').length
   const noLevel = selected.filter((w) => w.jlpt_level === null).length
-  console.log(`  JLPT distribution: N5=${n5}, N4=${n4}, N3=${n3}, none=${noLevel}`)
+  console.log(
+    `  JLPT distribution: N5=${n5}, N4=${n4}, N3=${n3}, N2=${n2}, N1=${n1}, none=${noLevel}`
+  )
 
   const withFreq = selected.filter((w) => w.frequency_rank !== null).length
   console.log(`  With frequency rank: ${withFreq}`)

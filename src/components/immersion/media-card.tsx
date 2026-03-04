@@ -25,11 +25,21 @@ export function MediaCard({ item }: MediaCardProps) {
   return (
     <Link href={`/immersion/${item.id}`}>
       <Card className="transition-shadow hover:shadow-md">
-        <div
-          className={`flex h-32 items-center justify-center rounded-t-lg bg-gradient-to-br ${placeholderColors[item.type] ?? 'from-gray-500/20 to-gray-500/20'}`}
-        >
-          <span className="text-3xl font-bold text-foreground/30">{item.type.toUpperCase()}</span>
-        </div>
+        {item.cover_image_url ? (
+          <img
+            src={item.cover_image_url}
+            alt={item.title}
+            className="h-32 w-full rounded-t-lg object-cover"
+          />
+        ) : (
+          <div
+            className={`flex h-32 items-center justify-center rounded-t-lg bg-gradient-to-br ${placeholderColors[item.type] ?? 'from-gray-500/20 to-gray-500/20'}`}
+          >
+            <span className="text-3xl font-bold text-foreground/30">
+              {item.type.toUpperCase()}
+            </span>
+          </div>
+        )}
         <CardContent className="space-y-2 pt-3">
           <h3 className="font-semibold text-foreground">{item.title}</h3>
           {item.title_english && (

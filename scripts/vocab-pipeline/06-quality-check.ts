@@ -4,7 +4,7 @@
  * Validates every word has:
  * - Non-empty word, reading, meaning
  * - Valid POS value
- * - Valid JLPT level (N5/N4/N3) or null
+ * - Valid JLPT level (N5/N4/N3/N2/N1) or null
  *
  * Reports stats and any issues found.
  */
@@ -19,7 +19,7 @@ const WORDS_FILE = path.join(CACHE_DIR, 'intermediate', '03-with-jlpt.json')
 const SENTENCES_FILE = path.join(CACHE_DIR, 'intermediate', '04-matched-sentences.json')
 const MAPPINGS_FILE = path.join(CACHE_DIR, 'intermediate', '04-sentence-mappings.json')
 
-const VALID_JLPT = ['N5', 'N4', 'N3', null]
+const VALID_JLPT = ['N5', 'N4', 'N3', 'N2', 'N1', null]
 
 export default async function qualityCheck(): Promise<{ count: number }> {
   const words: EnrichedWord[] = JSON.parse(fs.readFileSync(WORDS_FILE, 'utf-8'))
@@ -40,7 +40,7 @@ export default async function qualityCheck(): Promise<{ count: number }> {
     if (!validPosSet.has(w.part_of_speech)) {
       issues.push(`Word ${i} (${w.word}): invalid POS "${w.part_of_speech}"`)
     }
-    if (w.jlpt_level !== null && !['N5', 'N4', 'N3'].includes(w.jlpt_level)) {
+    if (w.jlpt_level !== null && !['N5', 'N4', 'N3', 'N2', 'N1'].includes(w.jlpt_level)) {
       issues.push(`Word ${i} (${w.word}): invalid JLPT "${w.jlpt_level}"`)
     }
   }

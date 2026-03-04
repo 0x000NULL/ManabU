@@ -59,6 +59,27 @@ export interface MediaContentDetailItem extends MediaContentListItem {
   }[]
 }
 
+/** Recently watched item for "Continue Watching" section */
+export interface RecentlyWatchedItem {
+  media_id: string
+  title: string
+  title_english: string | null
+  type: string
+  difficulty: string
+  cover_image_url: string | null
+  episode_count: number
+  completed_count: number
+  last_episode: {
+    episode_id: string
+    episode_number: number
+    title: string | null
+    duration_seconds: number | null
+    progress_seconds: number
+    completed: boolean
+    watched_at: string
+  }
+}
+
 export interface ImmersionStats {
   episodesWatched: number
   episodesCompleted: number

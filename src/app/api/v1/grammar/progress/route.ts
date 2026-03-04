@@ -3,6 +3,7 @@ import { getAuthUser } from '@/lib/auth'
 import prisma from '@/lib/db'
 import { grammarQuizResultSchema } from '@/lib/validations/grammar'
 import { processReview } from '@/lib/utils/srs-lite'
+import { recordStudyActivity } from '@/lib/utils/study-day'
 import {
   successResponse,
   validationError,
@@ -75,6 +76,12 @@ export async function POST(request: NextRequest) {
       aggregated.set(patternId, counts.correct / counts.total > 0.5)
     }
 
+    const existingGrammarProgress = await prisma.userProgress.findMany({
+      where: { user_id: user.id, category: 'grammar', item_id: { in: [...validIds] } },
+      select: { item_id: true },
+    })
+    const existingGrammarIds = new Set(existingGrammarProgress.map((p) => p.item_id))
+
     // Upsert progress in a transaction
     await prisma.$transaction(async (tx) => {
       for (const [patternId, isCorrect] of aggregated) {
@@ -124,6 +131,12 @@ export async function POST(request: NextRequest) {
           },
         })
       }
+    })
+
+    const newlyLearnedGrammar = [...validIds].filter((id) => !existingGrammarIds.has(id)).length
+    await recordStudyActivity(user.id, {
+      itemsReviewed: answers.length,
+      itemsLearned: newlyLearnedGrammar,
     })
 
     // Return updated counts

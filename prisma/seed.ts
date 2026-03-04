@@ -6,6 +6,7 @@ import { KATAKANA_CHARACTERS } from '../src/lib/constants/katakana-data'
 import { N5_GRAMMAR_PATTERNS } from '../src/lib/constants/grammar-data'
 import { N4_GRAMMAR_PATTERNS } from '../src/lib/constants/grammar-data-n4'
 import { MEDIA_LIBRARY } from '../src/lib/constants/media-data'
+import { ALL_LEARNING_PATHS } from '../src/lib/constants/learning-paths'
 
 const prisma = new PrismaClient()
 
@@ -316,6 +317,79 @@ async function main() {
     }
   }
   console.log(`✓ Seeded ${MEDIA_LIBRARY.length} media titles with episodes`)
+
+  // ============================================================================
+  // SEED LEARNING PATHS (from constants)
+  // ============================================================================
+  console.log('Seeding learning paths...')
+  for (let i = 0; i < ALL_LEARNING_PATHS.length; i++) {
+    const lp = ALL_LEARNING_PATHS[i]
+    const isAvailable = lp.milestones.length > 0
+
+    const upserted = await prisma.learningPath.upsert({
+      where: { slug: lp.slug },
+      update: {
+        name: lp.name,
+        jlpt_level: lp.jlptLevel,
+        description: lp.description,
+        display_order: i,
+        is_available: isAvailable,
+      },
+      create: {
+        name: lp.name,
+        slug: lp.slug,
+        jlpt_level: lp.jlptLevel,
+        description: lp.description,
+        display_order: i,
+        is_available: isAvailable,
+      },
+    })
+
+    // Replace milestones: delete existing, then create fresh
+    await prisma.learningPathMilestone.deleteMany({
+      where: { path_id: upserted.id },
+    })
+
+    if (lp.milestones.length > 0) {
+      // Resolve dynamic target counts
+      const milestoneData = []
+      for (let j = 0; j < lp.milestones.length; j++) {
+        const m = lp.milestones[j]
+        let targetCount: number
+        if (m.targetCount === 'dynamic') {
+          // Query actual count from DB
+          if (m.category === 'grammar' && m.jlptLevel) {
+            targetCount = await prisma.grammarPattern.count({
+              where: { jlpt_level: m.jlptLevel },
+            })
+          } else if (m.category === 'vocabulary' && m.jlptLevel) {
+            targetCount = await prisma.vocabulary.count({
+              where: { jlpt_level: m.jlptLevel },
+            })
+          } else {
+            targetCount = 0
+          }
+        } else {
+          targetCount = m.targetCount
+        }
+
+        milestoneData.push({
+          path_id: upserted.id,
+          title: m.title,
+          description: m.description,
+          category: m.category,
+          target_count: targetCount,
+          display_order: j,
+          jlpt_level: m.jlptLevel ?? null,
+          is_blocked: m.blocked ?? false,
+          link_href: m.linkHref ?? null,
+        })
+      }
+
+      await prisma.learningPathMilestone.createMany({ data: milestoneData })
+    }
+  }
+  console.log(`✓ Seeded ${ALL_LEARNING_PATHS.length} learning paths with milestones`)
 
   console.log('✅ Database seed completed!')
 }

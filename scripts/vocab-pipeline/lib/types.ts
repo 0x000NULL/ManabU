@@ -1,3 +1,9 @@
+/** A single sense extracted from JMdict */
+export interface WordSense {
+  meanings: string[]
+  pos: string
+}
+
 /** Raw word extracted from JMdict */
 export interface RawWord {
   word: string
@@ -5,12 +11,26 @@ export interface RawWord {
   meaning: string
   part_of_speech: string
   tags: string[]
+  senses: WordSense[]
+  is_common: boolean
+  verb_transitivity: 'transitive' | 'intransitive' | 'both' | null
+  domain_tags: string[]
+  misc_tags: string[]
 }
 
 /** Word enriched with frequency and JLPT data */
 export interface EnrichedWord extends RawWord {
   frequency_rank: number | null
   jlpt_level: string | null
+}
+
+/** Rich metadata tags for seed data */
+export interface RichTags {
+  senses: WordSense[]
+  is_common: boolean
+  transitivity: 'transitive' | 'intransitive' | 'both' | null
+  domains: string[]
+  misc: string[]
 }
 
 /** Final curated word ready for seed data */
@@ -21,7 +41,7 @@ export interface CuratedWord {
   part_of_speech: string
   jlpt_level: string | null
   frequency_rank: number | null
-  tags: string[]
+  tags: RichTags
 }
 
 /** Tatoeba sentence pair */

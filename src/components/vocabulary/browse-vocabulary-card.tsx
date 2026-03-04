@@ -1,8 +1,8 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { speakVocab } from '@/lib/utils/vocabulary'
-import { getFrequencyTier } from '@/lib/utils/vocabulary'
+import { speakVocab, getFrequencyTier } from '@/lib/utils/vocabulary'
+import { isRichTags } from '@/types/vocabulary'
 import type { VocabularyBrowseItem } from '@/types/vocabulary'
 
 const TIER_LABELS: Record<string, string> = {
@@ -60,6 +60,22 @@ export function BrowseVocabularyCard({ item, onClick }: BrowseVocabularyCardProp
               {TIER_LABELS[tier]}
             </span>
           )}
+          {isRichTags(item.tags) && item.tags.transitivity && (
+            <span className="rounded-full bg-orange-100 px-2 py-0.5 text-xs text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
+              {item.tags.transitivity === 'both'
+                ? 'T/I'
+                : item.tags.transitivity === 'transitive'
+                  ? 'Trans.'
+                  : 'Intrans.'}
+            </span>
+          )}
+          {isRichTags(item.tags) &&
+            item.tags.senses &&
+            item.tags.senses.length > 1 && (
+              <span className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                +{item.tags.senses.length - 1} senses
+              </span>
+            )}
         </div>
       </CardContent>
     </Card>

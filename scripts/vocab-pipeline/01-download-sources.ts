@@ -4,7 +4,7 @@
  * Downloads 4 sources to .cache/ (idempotent — skips if cached):
  * - JMdict (jmdict-simplified): dictionary data
  * - Leeds frequency list: word frequency rankings
- * - JLPT word lists: N5/N4/N3 level tags
+ * - JLPT word lists: N5/N4/N3/N2/N1 level tags
  * - Tatoeba sentences: Japanese-English sentence pairs
  */
 
@@ -31,6 +31,14 @@ const SOURCES = {
   jlptN3: {
     url: 'https://raw.githubusercontent.com/wkei/jlpt-vocab-api/main/data-source/db/n3.json',
     file: 'jlpt-n3.json',
+  },
+  jlptN2: {
+    url: 'https://raw.githubusercontent.com/wkei/jlpt-vocab-api/main/data-source/db/n2.json',
+    file: 'jlpt-n2.json',
+  },
+  jlptN1: {
+    url: 'https://raw.githubusercontent.com/wkei/jlpt-vocab-api/main/data-source/db/n1.json',
+    file: 'jlpt-n1.json',
   },
   tatoeba: {
     url: 'https://www.manythings.org/anki/jpn-eng.zip',
@@ -117,7 +125,7 @@ export default async function downloadSources(): Promise<{ count: number }> {
   }
 
   // 3. JLPT lists
-  for (const level of ['jlptN5', 'jlptN4', 'jlptN3'] as const) {
+  for (const level of ['jlptN5', 'jlptN4', 'jlptN3', 'jlptN2', 'jlptN1'] as const) {
     const src = SOURCES[level]
     const destPath = path.join(CACHE_DIR, src.file)
     if (fs.existsSync(destPath)) {

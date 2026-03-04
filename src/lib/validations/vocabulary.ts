@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 export const vocabularyQuerySchema = z.object({
   jlptLevel: z
-    .enum(['N5', 'N4', 'N3'])
+    .enum(['N5', 'N4', 'N3', 'N2', 'N1'])
     .optional(),
   frequencyTier: z
     .enum(['essential', 'core', 'intermediate', 'expanding', 'advanced'])

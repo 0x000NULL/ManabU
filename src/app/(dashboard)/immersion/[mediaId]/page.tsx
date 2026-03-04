@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { LoadingSpinner } from '@/components/ui/loading-spinner'
 import { formatTime } from '@/lib/utils/format-time'
 import type { MediaContentDetailItem } from '@/types/media'
@@ -12,6 +13,40 @@ const difficultyColors: Record<string, string> = {
   beginner: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
   intermediate: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
   advanced: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+}
+
+function getResumeEpisode(media: MediaContentDetailItem) {
+  // 1. First in-progress episode
+  const inProgress = media.episodes.find(
+    (ep) => ep.progress && !ep.progress.completed && ep.progress.progress_seconds > 0
+  )
+  if (inProgress) {
+    return { episode: inProgress, label: `Resume Episode ${inProgress.episode_number}` }
+  }
+
+  // 2. First unwatched episode
+  const unwatched = media.episodes.find((ep) => !ep.progress)
+  if (unwatched) {
+    return { episode: unwatched, label: `Start Episode ${unwatched.episode_number}` }
+  }
+
+  // 3. Most recently watched episode
+  const sorted = [...media.episodes]
+    .filter((ep) => ep.progress)
+    .sort(
+      (a, b) =>
+        new Date(b.progress!.watched_at).getTime() - new Date(a.progress!.watched_at).getTime()
+    )
+  if (sorted.length > 0) {
+    return { episode: sorted[0], label: `Rewatch Episode ${sorted[0].episode_number}` }
+  }
+
+  // 4. Fallback to first episode
+  if (media.episodes.length > 0) {
+    return { episode: media.episodes[0], label: `Start Episode ${media.episodes[0].episode_number}` }
+  }
+
+  return null
 }
 
 export default function MediaDetailPage() {
@@ -61,6 +96,7 @@ export default function MediaDetailPage() {
   if (!media) return null
 
   const completedCount = media.episodes.filter((ep) => ep.progress?.completed).length
+  const resumeInfo = getResumeEpisode(media)
 
   return (
     <div className="space-y-6">
@@ -101,6 +137,13 @@ export default function MediaDetailPage() {
           ))}
         </div>
       </div>
+
+      {/* Resume button */}
+      {resumeInfo && (
+        <Link href={`/immersion/watch/${mediaId}/${resumeInfo.episode.id}`}>
+          <Button size="lg">{resumeInfo.label}</Button>
+        </Link>
+      )}
 
       {/* Description */}
       {media.description && <p className="text-sm text-muted-foreground">{media.description}</p>}

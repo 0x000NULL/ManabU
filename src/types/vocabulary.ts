@@ -1,5 +1,25 @@
 export type FrequencyTier = 'essential' | 'core' | 'intermediate' | 'expanding' | 'advanced'
 
+export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1'
+
+export interface VocabSense {
+  meanings: string[]
+  pos: string
+}
+
+export interface VocabMetadata {
+  senses?: VocabSense[]
+  is_common?: boolean
+  transitivity?: 'transitive' | 'intransitive' | 'both' | null
+  domains?: string[]
+  misc?: string[]
+}
+
+/** Type guard to check if tags is a rich VocabMetadata object */
+export function isRichTags(tags: VocabMetadata | string[]): tags is VocabMetadata {
+  return tags !== null && !Array.isArray(tags) && typeof tags === 'object'
+}
+
 export interface VocabularyItem {
   id: string
   word: string
@@ -8,7 +28,7 @@ export interface VocabularyItem {
   part_of_speech: string | null
   jlpt_level: string | null
   frequency_rank: number | null
-  tags: string[]
+  tags: VocabMetadata | string[]
   audio_url: string | null
 }
 
@@ -20,8 +40,6 @@ export interface ExampleSentenceItem {
   furigana: string | null
   audio_url: string | null
 }
-
-export type JlptLevel = 'N5' | 'N4' | 'N3'
 
 /** Browse list item — VocabularyItem + sentences */
 export interface VocabularyBrowseItem extends VocabularyItem {

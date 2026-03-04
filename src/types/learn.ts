@@ -1,3 +1,5 @@
+import type { VocabMetadata } from '@/types/vocabulary'
+
 /** Matches the shape returned by GET /api/v1/srs/new → items[] */
 export interface NewWordItem {
   id: string
@@ -7,7 +9,7 @@ export interface NewWordItem {
   part_of_speech: string | null
   jlpt_level: string | null
   frequency_rank: number | null
-  tags: string[]
+  tags: VocabMetadata | string[]
   audio_url: string | null
   sentences: {
     id: string
