@@ -33,7 +33,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x01_-_Rebirth.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyu!!%202nd%20Season%20-%2001-en.srt',
       },
       {
         episode_number: 2,
@@ -42,7 +42,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x02_-_Confrontation.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2002-en.srt',
       },
       {
         episode_number: 3,
@@ -51,7 +51,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x03_-_Dealings.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20Karasuno%20High%20VS%20Shiratorizawa%20Academy%20-%2003-en.srt',
       },
       {
         episode_number: 4,
@@ -60,7 +60,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x04_-_Pursuit.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2004-en.srt',
       },
       {
         episode_number: 5,
@@ -69,7 +69,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x05_-_Tactics.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20Karasuno%20High%20VS%20Shiratorizawa%20Academy%20-%2005-en.srt',
       },
       {
         episode_number: 6,
@@ -78,7 +78,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x06_-_Unraveling.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2006-en.srt',
       },
       {
         episode_number: 7,
@@ -87,7 +87,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x07_-_Overcast.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2007-en.srt',
       },
       {
         episode_number: 8,
@@ -96,7 +96,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x08_-_Glare.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyu!!%202nd%20Season%20-%2008-en.srt',
       },
       {
         episode_number: 9,
@@ -105,7 +105,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x09_-_Encounter.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20Karasuno%20High%20VS%20Shiratorizawa%20Academy%20-%2009-en.srt',
       },
       {
         episode_number: 10,
@@ -114,7 +114,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x10_-_Doubt.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2010-en.srt',
       },
       {
         episode_number: 11,
@@ -123,7 +123,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x11_-_Assault.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2011-en.srt',
       },
       {
         episode_number: 12,
@@ -132,7 +132,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x12_-_Love.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2012-en.srt',
       },
       {
         episode_number: 13,
@@ -141,7 +141,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x13_-_Confession.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyu!!%202nd%20Season%20-%2013-en.srt',
       },
       {
         episode_number: 14,
@@ -150,7 +150,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x14_-_Friend.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2014-en.srt',
       },
       {
         episode_number: 15,
@@ -159,7 +159,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x15_-_Wager.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2015-en.srt',
       },
       {
         episode_number: 16,
@@ -168,7 +168,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x16_-_Decision.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyu!!%202nd%20Season%20-%2016-en.srt',
       },
       {
         episode_number: 17,
@@ -177,7 +177,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x17_-_Execution.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2017-en.srt',
       },
       {
         episode_number: 18,
@@ -186,7 +186,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x18_-_Ally.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2018-en.srt',
       },
       {
         episode_number: 19,
@@ -195,7 +195,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x19_-_Matsuda.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2019-en.srt',
       },
       {
         episode_number: 20,
@@ -204,7 +204,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x20_-_Makeshift.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2020-en.srt',
       },
       {
         episode_number: 21,
@@ -213,7 +213,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x21_-_Performance.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2021-en.srt',
       },
       {
         episode_number: 22,
@@ -222,7 +222,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x22_-_Guidance.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2022-en.srt',
       },
       {
         episode_number: 23,
@@ -231,7 +231,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x23_-_Frenzy.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2023-en.srt',
       },
       {
         episode_number: 24,
@@ -240,7 +240,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x24_-_Revival.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20To%20The%20Top%20-%2024-en.srt',
       },
       {
         episode_number: 25,
@@ -249,7 +249,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x25_-_Silence.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/haikyuu/%5BAnime%20Time%5D%20Haikyuu!!%20-%2025-en.srt',
       },
       {
         episode_number: 26,
@@ -258,7 +258,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x26_-_Renewal.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2001%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5BE9500690%5D-en.srt',
       },
       {
         episode_number: 27,
@@ -267,7 +267,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x27_-_Abduction.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2002%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B11BBC375%5D-en.srt',
       },
       {
         episode_number: 28,
@@ -276,7 +276,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x28_-_Impatience.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2003%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B6385E3A8%5D-en.srt',
       },
       {
         episode_number: 29,
@@ -285,7 +285,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x29_-_Father.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2004%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B8A5C48B6%5D-en.srt',
       },
       {
         episode_number: 30,
@@ -294,7 +294,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x30_-_Justice.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2005%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5BA91D9991%5D-en.srt',
       },
       {
         episode_number: 31,
@@ -303,7 +303,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x31_-_Transfer.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2006%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5BD7B226AD%5D-en.srt',
       },
       {
         episode_number: 32,
@@ -312,7 +312,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x32_-_Selection.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2007%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B879781F5%5D-en.srt',
       },
       {
         episode_number: 33,
@@ -321,7 +321,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x33_-_Scorn.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2008%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B0FED8F76%5D-en.srt',
       },
       {
         episode_number: 34,
@@ -330,7 +330,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x34_-_Vigilance.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2009%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B695D6A65%5D-en.srt',
       },
       {
         episode_number: 35,
@@ -339,7 +339,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x35_-_Malice.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2010%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B6957C232%5D-en.srt',
       },
       {
         episode_number: 36,
@@ -348,7 +348,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x36_-_1.28.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2011%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5B6A363989%5D-en.srt',
       },
       {
         episode_number: 37,
@@ -357,7 +357,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1380,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/death-note/Death_Note_-_01x37_-_New_World.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2012%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5BBCFBAB8C%5D-en.srt',
       },
     ],
   },
@@ -384,7 +384,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_01.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/odd-taxi/%5BErai-raws%5D%20Odd%20Taxi%20-%2013%20%5B1080p%5D%5BMultiple%20Subtitle%5D%5BEA2397A9%5D-en.srt',
       },
       {
         episode_number: 2,
@@ -393,7 +393,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_02.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x01%20-%20Rebirth-en.srt',
       },
       {
         episode_number: 3,
@@ -402,7 +402,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_03.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x02%20-%20Confrontation-en.srt',
       },
       {
         episode_number: 4,
@@ -411,7 +411,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_04.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x03%20-%20Dealings-en.srt',
       },
       {
         episode_number: 5,
@@ -420,7 +420,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_05.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x04%20-%20Pursuit-en.srt',
       },
       {
         episode_number: 6,
@@ -429,7 +429,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_06.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x05%20-%20Tactics-en.srt',
       },
       {
         episode_number: 7,
@@ -438,7 +438,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_07.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x06%20-%20Unraveling-en.srt',
       },
       {
         episode_number: 8,
@@ -447,7 +447,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_08.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x07%20-%20Overcast-en.srt',
       },
       {
         episode_number: 9,
@@ -456,7 +456,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_09.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x08%20-%20Glare-en.srt',
       },
       {
         episode_number: 10,
@@ -465,7 +465,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_10.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x09%20-%20Encounter-en.srt',
       },
       {
         episode_number: 11,
@@ -474,7 +474,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_11.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x10%20-%20Doubt-en.srt',
       },
       {
         episode_number: 12,
@@ -483,7 +483,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_12.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x11%20-%20Assault-en.srt',
       },
       {
         episode_number: 13,
@@ -492,7 +492,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_13.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x12%20-%20Love-en.srt',
       },
       {
         episode_number: 14,
@@ -501,7 +501,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_14.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x13%20-%20Confession-en.srt',
       },
       {
         episode_number: 15,
@@ -510,7 +510,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_15.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x14%20-%20Friend-en.srt',
       },
       {
         episode_number: 16,
@@ -519,7 +519,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_16.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x15%20-%20Wager-en.srt',
       },
       {
         episode_number: 17,
@@ -528,7 +528,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_17.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x16%20-%20Decision-en.srt',
       },
       {
         episode_number: 18,
@@ -537,7 +537,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_18.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x17%20-%20Execution-en.srt',
       },
       {
         episode_number: 19,
@@ -546,7 +546,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_19.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x18%20-%20Ally-en.srt',
       },
       {
         episode_number: 20,
@@ -555,7 +555,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_20.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x19%20-%20Matsuda-en.srt',
       },
       {
         episode_number: 21,
@@ -564,7 +564,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_21.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x20%20-%20Makeshift-en.srt',
       },
       {
         episode_number: 22,
@@ -573,7 +573,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_22.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x21%20-%20Performance-en.srt',
       },
       {
         episode_number: 23,
@@ -582,7 +582,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_23.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x22%20-%20Guidance-en.srt',
       },
       {
         episode_number: 24,
@@ -591,7 +591,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_24.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x23%20-%20Frenzy-en.srt',
       },
       {
         episode_number: 25,
@@ -600,7 +600,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/haikyuu/Haikyuu!!_-_25.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x24%20-%20Revival-en.srt',
       },
     ],
   },
@@ -627,7 +627,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_01_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x25%20-%20Silence-en.srt',
       },
       {
         episode_number: 2,
@@ -636,7 +636,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_02_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x26%20-%20Renewal-en.srt',
       },
       {
         episode_number: 3,
@@ -645,7 +645,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_03_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x27%20-%20Abduction-en.srt',
       },
       {
         episode_number: 4,
@@ -654,7 +654,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_04_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x28%20-%20Impatience-en.srt',
       },
       {
         episode_number: 5,
@@ -663,7 +663,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_05_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x29%20-%20Father-en.srt',
       },
       {
         episode_number: 6,
@@ -672,7 +672,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_06_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x30%20-%20Justice-en.srt',
       },
       {
         episode_number: 7,
@@ -681,7 +681,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_07_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x31%20-%20Transfer-en.srt',
       },
       {
         episode_number: 8,
@@ -690,7 +690,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_08_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x32%20-%20Selection-en.srt',
       },
       {
         episode_number: 9,
@@ -699,7 +699,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_09_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x33%20-%20Scorn-en.srt',
       },
       {
         episode_number: 10,
@@ -708,7 +708,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_10_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x34%20-%20Vigilance-en.srt',
       },
       {
         episode_number: 11,
@@ -717,7 +717,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_11_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x35%20-%20Malice-en.srt',
       },
       {
         episode_number: 12,
@@ -726,7 +726,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_12_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x36%20-%201.28-en.srt',
       },
       {
         episode_number: 13,
@@ -735,7 +735,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_13_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/death-note/Death%20Note%20-%2001x37%20-%20New%20World-en.srt',
       },
       {
         episode_number: 14,
@@ -744,7 +744,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_14_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2001-en.srt',
       },
       {
         episode_number: 15,
@@ -753,7 +753,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_15_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2002%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 16,
@@ -762,7 +762,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_16_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars%20S5%20-%2003-en.srt',
       },
       {
         episode_number: 17,
@@ -771,7 +771,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_17_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2004-en.srt',
       },
       {
         episode_number: 18,
@@ -780,7 +780,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_18_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars%20S5%20-%2005-en.srt',
       },
       {
         episode_number: 19,
@@ -789,7 +789,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_19_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2006%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 20,
@@ -798,7 +798,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_20_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars%20S5%20-%2007-en.srt',
       },
       {
         episode_number: 21,
@@ -807,7 +807,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_21_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2008-en.srt',
       },
       {
         episode_number: 22,
@@ -816,7 +816,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_22_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars%20S5%20-%2009-en.srt',
       },
       {
         episode_number: 23,
@@ -825,7 +825,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_23_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2010-en.srt',
       },
       {
         episode_number: 24,
@@ -834,7 +834,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_24_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2011-en.srt',
       },
       {
         episode_number: 25,
@@ -843,7 +843,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_25_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/Food%20Wars!%20S2%20-%2012-en.srt',
       },
       {
         episode_number: 26,
@@ -852,7 +852,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/wangan-midnight/Wangan_Midnight_-_26_(DVD_480p_x265_AAC)_.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2013%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
     ],
   },
@@ -879,7 +879,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E01.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2014%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 2,
@@ -888,7 +888,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E02.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2015%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 3,
@@ -897,7 +897,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E03.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2016%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 4,
@@ -906,7 +906,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E04.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2017%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 5,
@@ -915,7 +915,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E05.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2018%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 6,
@@ -924,7 +924,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E06.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2019%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 7,
@@ -933,7 +933,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E07.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2020%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 8,
@@ -942,7 +942,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E08.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2021%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 9,
@@ -951,7 +951,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E09.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2022%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 10,
@@ -960,7 +960,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E10.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2023%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 11,
@@ -969,7 +969,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E11.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/food-wars/%5BAnime%20Time%5D%20Food%20Wars!%20-%2024%20%5BBD%5D%5BDual%20Audio%5D%5B1080p%5D%5BHEVC%2010bit%20x265%5D%5BAAC%5D-en.srt',
       },
       {
         episode_number: 12,
@@ -978,7 +978,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E12.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2001%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 13,
@@ -987,7 +987,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E13.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2002%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 14,
@@ -996,7 +996,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E14.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2003%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 15,
@@ -1005,7 +1005,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E15.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2004%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 17,
@@ -1014,7 +1014,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E17.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2005%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 18,
@@ -1023,7 +1023,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E18.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2006%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 19,
@@ -1032,7 +1032,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E19.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2007%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 20,
@@ -1041,7 +1041,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E20.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2008%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 21,
@@ -1050,7 +1050,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E21.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2009%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 22,
@@ -1059,7 +1059,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E22.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2010%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 23,
@@ -1068,7 +1068,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E23.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2011%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 24,
@@ -1077,7 +1077,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E24.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2012%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 25,
@@ -1086,7 +1086,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1500,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/initial-d/Initial_D_-_S01E25.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2013%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
     ],
   },
@@ -1113,7 +1113,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_01.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2014%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 2,
@@ -1122,7 +1122,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_02.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2015%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 3,
@@ -1131,7 +1131,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_03.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2016%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 4,
@@ -1140,7 +1140,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_04.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2017%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 5,
@@ -1149,7 +1149,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_05.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2018%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 6,
@@ -1158,7 +1158,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_06.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2019%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 7,
@@ -1167,7 +1167,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_07.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2020%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 8,
@@ -1176,7 +1176,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_08.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2021%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 9,
@@ -1185,7 +1185,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_09.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2022%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 10,
@@ -1194,7 +1194,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_10.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2023%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 11,
@@ -1203,7 +1203,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_11.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2024%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
       {
         episode_number: 12,
@@ -1212,7 +1212,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 1440,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/food-wars/Food_Wars_-_12.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2025%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
     ],
   },
@@ -1239,7 +1239,7 @@ export const MEDIA_LIBRARY: MediaContentData[] = [
         duration_seconds: 15600,
         video_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/videos/odd-taxi/.mkv',
         subtitle_ja_url: null,
-        subtitle_en_url: null,
+        subtitle_en_url: 'https://wakaru-media.sfo3.cdn.digitaloceanspaces.com/subtitles/wangan-midnight/Wangan%20Midnight%20-%2026%20(DVD%20480p%20x265%20AAC)%20%5Bpeachflavored%5D-en.srt',
       },
     ],
   },
