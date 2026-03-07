@@ -1,11 +1,13 @@
 import { getAuthUser } from '@/lib/auth'
 import prisma from '@/lib/db'
-import { successResponse, unauthorizedError, serverError } from '@/lib/utils/api-response'
+import { successResponse, unauthorizedError, forbiddenError, serverError } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 export async function GET() {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const eightWeeksAgo = new Date()
     eightWeeksAgo.setDate(eightWeeksAgo.getDate() - 56)

@@ -7,6 +7,7 @@ import { useAuthStore } from '@/store/auth-store'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils/cn'
 import { dashboardNavItems } from '@/lib/constants/navigation'
+import { hasImmersionAccess, IMMERSION_NAV_HREFS } from '@/lib/utils/immersion-access'
 
 interface HeaderProps {
   showDashboardNav?: boolean
@@ -87,7 +88,10 @@ export function Header({ showDashboardNav = false }: HeaderProps) {
                 <>
                   <div className="border-t border-border pt-2">
                     <nav className="flex flex-col gap-1">
-                      {dashboardNavItems.map(item => {
+                      {(user?.email && hasImmersionAccess(user.email)
+                        ? dashboardNavItems
+                        : dashboardNavItems.filter((item) => !IMMERSION_NAV_HREFS.has(item.href))
+                      ).map(item => {
                         const isActive =
                           pathname === item.href || pathname.startsWith(item.href + '/')
                         return (

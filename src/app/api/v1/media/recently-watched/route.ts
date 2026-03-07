@@ -1,12 +1,14 @@
 import { getAuthUser } from '@/lib/auth'
 import prisma from '@/lib/db'
-import { successResponse, unauthorizedError, serverError } from '@/lib/utils/api-response'
+import { successResponse, unauthorizedError, forbiddenError, serverError } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 import type { RecentlyWatchedItem } from '@/types/media'
 
 export async function GET() {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     // Fetch all user media progress, most recent first
     const progressRecords = await prisma.userMediaProgress.findMany({

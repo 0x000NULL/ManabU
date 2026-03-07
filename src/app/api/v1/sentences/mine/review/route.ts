@@ -8,14 +8,17 @@ import {
   successResponse,
   validationError,
   unauthorizedError,
+  forbiddenError,
   notFoundError,
   serverError,
 } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 export async function POST(request: NextRequest) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const body = await request.json()
     const result = srsReviewSchema.safeParse(body)

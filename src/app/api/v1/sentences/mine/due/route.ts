@@ -4,13 +4,16 @@ import prisma from '@/lib/db'
 import {
   successResponse,
   unauthorizedError,
+  forbiddenError,
   serverError,
 } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 export async function GET(request: NextRequest) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const limit = Math.min(
       Math.max(1, parseInt(request.nextUrl.searchParams.get('limit') ?? '50', 10) || 50),

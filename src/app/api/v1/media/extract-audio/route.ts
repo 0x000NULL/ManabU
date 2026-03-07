@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { join } from 'path'
 import { extractAudio, cleanupOldClips, AudioExtractionError } from '@/lib/utils/audio-extraction'
 import { getAuthUser } from '@/lib/auth'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 // Directory for storing audio clips (relative to project root)
 const AUDIO_CLIPS_DIR = join(process.cwd(), 'public', 'audio-clips')
@@ -17,6 +18,9 @@ export async function POST(request: NextRequest) {
     const user = await getAuthUser()
     if (!user) {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
+    }
+    if (!hasImmersionAccess(user.email)) {
+      return NextResponse.json({ error: 'Immersion access restricted' }, { status: 403 })
     }
 
     // Parse request body

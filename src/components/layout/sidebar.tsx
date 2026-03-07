@@ -4,14 +4,21 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils/cn'
 import { dashboardNavItems } from '@/lib/constants/navigation'
+import { useAuthStore } from '@/store/auth-store'
+import { hasImmersionAccess, IMMERSION_NAV_HREFS } from '@/lib/utils/immersion-access'
 
 export function Sidebar() {
   const pathname = usePathname()
+  const user = useAuthStore((s) => s.user)
+  const canAccessImmersion = user?.email ? hasImmersionAccess(user.email) : false
+  const navItems = canAccessImmersion
+    ? dashboardNavItems
+    : dashboardNavItems.filter((item) => !IMMERSION_NAV_HREFS.has(item.href))
 
   return (
     <aside className="hidden w-56 shrink-0 border-r border-border bg-background lg:block">
       <nav className="flex flex-col gap-1 p-4">
-        {dashboardNavItems.map(item => {
+        {navItems.map(item => {
           const isActive =
             pathname === item.href || pathname.startsWith(item.href + '/')
           return (

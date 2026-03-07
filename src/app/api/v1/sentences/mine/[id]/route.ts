@@ -7,9 +7,11 @@ import {
   successResponse,
   validationError,
   unauthorizedError,
+  forbiddenError,
   notFoundError,
   serverError,
 } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -19,6 +21,7 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const { id } = await params
     if (!isValidId(id)) return validationError('Invalid ID format')
@@ -93,6 +96,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const { id } = await params
     if (!isValidId(id)) return validationError('Invalid ID format')
@@ -156,6 +160,7 @@ export async function DELETE(_request: NextRequest, { params }: RouteParams) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const { id } = await params
     if (!isValidId(id)) return validationError('Invalid ID format')

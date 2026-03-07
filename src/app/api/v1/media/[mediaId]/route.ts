@@ -5,9 +5,11 @@ import {
   successResponse,
   validationError,
   unauthorizedError,
+  forbiddenError,
   notFoundError,
   serverError,
 } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 export async function GET(
   _request: Request,
@@ -16,6 +18,7 @@ export async function GET(
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const { mediaId } = await params
     if (!isValidId(mediaId)) return validationError('Invalid ID format')

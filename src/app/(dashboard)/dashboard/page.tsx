@@ -12,6 +12,7 @@ import { LearningPathProgress } from '@/components/dashboard/learning-path-progr
 import { StreakDisplay } from '@/components/dashboard/streak-display'
 import { WeeklyStatsCard } from '@/components/dashboard/weekly-stats-card'
 import { FeatureTour } from '@/components/dashboard/feature-tour'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 import type { GrammarProgressStats } from '@/types/grammar'
 
 function HiraganaStatus({ onUnauthorized }: { onUnauthorized: () => void }) {
@@ -112,6 +113,7 @@ export default function DashboardPage() {
   const { user } = useAuthStore()
   const router = useRouter()
   const redirectingRef = useRef(false)
+  const canAccessImmersion = user?.email ? hasImmersionAccess(user.email) : false
 
   const handleUnauthorized = useCallback(async () => {
     if (redirectingRef.current) return
@@ -203,19 +205,21 @@ export default function DashboardPage() {
           </Card>
         </Link>
 
-        <Link href="/immersion" className="transition-opacity hover:opacity-80">
-          <Card>
-            <CardHeader>
-              <CardTitle>Immersion</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Practice with real Japanese media, interactive subtitles, and sentence mining.
-              </p>
-              <p className="mt-3 text-xs font-medium text-primary">Start Watching</p>
-            </CardContent>
-          </Card>
-        </Link>
+        {canAccessImmersion && (
+          <Link href="/immersion" className="transition-opacity hover:opacity-80">
+            <Card>
+              <CardHeader>
+                <CardTitle>Immersion</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Practice with real Japanese media, interactive subtitles, and sentence mining.
+                </p>
+                <p className="mt-3 text-xs font-medium text-primary">Start Watching</p>
+              </CardContent>
+            </Card>
+          </Link>
+        )}
       </div>
 
       <FeatureTour />

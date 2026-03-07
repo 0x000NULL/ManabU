@@ -7,13 +7,16 @@ import {
   cachedSuccessResponse,
   validationError,
   unauthorizedError,
+  forbiddenError,
   serverError,
 } from '@/lib/utils/api-response'
+import { hasImmersionAccess } from '@/lib/utils/immersion-access'
 
 export async function GET(request: NextRequest) {
   try {
     const user = await getAuthUser()
     if (!user) return unauthorizedError()
+    if (!hasImmersionAccess(user.email)) return forbiddenError('Immersion access restricted')
 
     const params = Object.fromEntries(request.nextUrl.searchParams)
     const result = mediaQuerySchema.safeParse(params)

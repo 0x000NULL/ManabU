@@ -33,6 +33,10 @@ export function notFoundError(message = 'Not found') {
   return errorResponse('NOT_FOUND', message, 404)
 }
 
+export function forbiddenError(message = 'Forbidden') {
+  return errorResponse('FORBIDDEN', message, 403)
+}
+
 export function rateLimitError(message = 'Too many requests') {
   return errorResponse('RATE_LIMIT_EXCEEDED', message, 429)
 }
